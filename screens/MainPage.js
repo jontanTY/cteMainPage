@@ -3,12 +3,14 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 
 import Header from '../components/Header';
+import Calendar from '../components/Calender';
 export default function MainPage() {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.headerContainer}>
+
                 <View>
-                    <Text style={styles.iconTextTop}>Moanalua High School </Text>
+                    <Text style={styles.iconTextTop}>Moanalua HS</Text>
                     <Text style={styles.iconTextBottom}>CTE</Text>
                 </View>
                 <Image
@@ -21,6 +23,10 @@ export default function MainPage() {
                 style={styles.backgroundImageStyle}
                 source={require('../assets/mohsPAC.jpg')}
             />
+
+            <View>
+                
+            </View>
         </ScrollView>
     );
 }
@@ -65,6 +71,11 @@ const styles = StyleSheet.create({
         height: 90,
         width: 90,
         flexDirection: 'column',
+        marginLeft: 10,
+    },
+
+    headerStyle: {
+        color: 'white',
     },
 
     backgroundImageStyle: {
