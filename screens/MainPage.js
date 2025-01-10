@@ -6,28 +6,25 @@ import Header from '../components/Header';
 import Calendar from '../components/Calender';
 export default function MainPage() {
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.headerContainer}>
-
-                <View>
-                    <Text style={styles.iconTextTop}>Moanalua HS</Text>
-                    <Text style={styles.iconTextBottom}>CTE</Text>
-                </View>
                 <Image
                     style={styles.imageStyle}
                     source={require('../assets/moanaluaIcon.png')}
                 />
                 <Header> CTE </Header>
             </View>
-            <Image
-                style={styles.backgroundImageStyle}
-                source={require('../assets/mohsPAC.jpg')}
-            />
+            <ScrollView style={styles.container}>
+                <Image
+                    style={styles.backgroundImageStyle}
+                    source={require('../assets/mohsPAC.jpg')}
+                />
 
-            <View>
-                
-            </View>
-        </ScrollView>
+                <View>
+                    <Calendar> isdjidsdsfilsdfsfdklsdflsdfklnlksfd </Calendar>
+                </View>
+            </ScrollView>
+        </View>
     );
 }
 
@@ -38,7 +35,7 @@ const styles = StyleSheet.create({
     },
 
     headerContainer: {
-        height: 140,
+        height: 120,
         flexDirection: 'row',
         borderColor: '#eeeeee',
         borderBottomWidth: 1,
