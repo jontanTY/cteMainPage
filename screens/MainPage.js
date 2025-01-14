@@ -4,6 +4,14 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Header from '../components/Header';
 import Calendar from '../components/Calender';
+
+const events = [
+    { id: 1, name: "Business", month: 1, date: 5 },
+    { id: 2, name: "Engineering", month: 3, date: 10 },
+    { id: 3, name: "REtard", month: 7, date: 2 },
+    { id: 4, name: "forgot", month: 11, date: 7 },
+];
+
 export default function MainPage() {
     return (
         <View style={styles.container}>
@@ -21,7 +29,7 @@ export default function MainPage() {
                 />
 
                 <View>
-                    <Calendar> isdjidsdsfilsdfsfdklsdflsdfklnlksfd </Calendar>
+                    <Calendar> {events} </Calendar>
                 </View>
             </ScrollView>
         </View>
