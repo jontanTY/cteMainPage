@@ -3,7 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 
 import Header from '../components/Header';
-import Calendar from '../components/Calender';
+import Calendar from '../components/Calendar';
 
 const events = [
     { id: 1, name: "Business", month: 1, date: 5 },
