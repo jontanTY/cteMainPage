@@ -4,6 +4,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
+import DropdownComponent from '../components/DropdownComponent';
 
 const events = [
     { id: 1, name: "Business", month: 1, date: 5 },
@@ -15,14 +16,17 @@ const events = [
 export default function MainPage() {
     return (
         <View style={styles.container}>
-            <View style={styles.headerContainer}>
-                <Image
-                    style={styles.imageStyle}
-                    source={require('../assets/moanaluaIcon.png')}
-                />
-                <Header> CTE </Header>
+            <View style={styles.searchContainer}>
+                <DropdownComponent />
             </View>
             <ScrollView style={styles.container}>
+                <View style={styles.headerContainer}>
+                    <Image
+                        style={styles.imageStyle}
+                        source={require('../assets/moanaluaIcon.png')}
+                    />
+                    <Header> CTE </Header>
+                </View>
                 <Image
                     style={styles.backgroundImageStyle}
                     source={require('../assets/mohsPAC.jpg')}
@@ -42,19 +46,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
 
+    searchContainer: {
+        flex: 0.17,
+        flexDirection: 'row-reverse',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        borderBottomWidth: 0.5,
+        borderColor: '#eeeeee',
+    },
+
     headerContainer: {
         height: 120,
         flexDirection: 'row',
+        flexWrap: 'wrap',
         borderColor: '#eeeeee',
         borderBottomWidth: 1,
         borderTopWidth: 1,
         alignItems: 'center',
-
     },
 
-    iconTextContainer: {
-        flexDirection: 'column',
-        alignItems: 'center',
+    dropDownContainer: {
+        flexDirection: 'row-reverse'
     },
 
     iconTextTop: {
