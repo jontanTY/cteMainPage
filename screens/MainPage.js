@@ -7,10 +7,10 @@ import Calendar from '../components/Calendar';
 import DropdownComponent from '../components/DropdownComponent';
 
 const events = [
-    { id: 1, name: "Business", month: 1, date: 5 },
-    { id: 2, name: "Engineering", month: 3, date: 10 },
-    { id: 3, name: "REtard", month: 7, date: 2 },
-    { id: 4, name: "forgot", month: 11, date: 7 },
+    { id: 1, name: "event1", month: 1, date: 5 },
+    { id: 2, name: "event2", month: 3, date: 10 },
+    { id: 3, name: "event3", month: 7, date: 2 },
+    { id: 4, name: "event4", month: 11, date: 7 },
 ];
 
 export default function MainPage() {
@@ -33,7 +33,7 @@ export default function MainPage() {
                 />
 
                 <View>
-                    <Calendar> {events} </Calendar>
+                    <Calendar style={styles.calendarContainer}> {events} </Calendar>
                 </View>
             </ScrollView>
         </View>
@@ -101,4 +101,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         opacity: '78%',
     },
+
+    calendarContainer: {
+        height: 160,
+    }
 });
