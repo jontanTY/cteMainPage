@@ -27,6 +27,7 @@ const DropdownComponent = () => {
       containerStyle={styles.containerStyle}
       itemTextStyle={styles.itemTextStyle}
       iconStyle={styles.iconStyle}
+      showsVerticalScrollIndicator={false}
       activeColor='#23359d'
       data={data}
       maxHeight={300}
@@ -49,9 +50,11 @@ const styles = StyleSheet.create({
     height: 50,
     width: 175,
   },
+  
   icon: {
     marginRight: 5,
   },
+
   placeholderStyle: {
     fontSize: 16,
     color: 'grey',
