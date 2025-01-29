@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
   dropdown: {
     marginRight: 20,
     height: 50,
-    width: 175,
   },
   
   icon: {
@@ -66,6 +65,8 @@ const styles = StyleSheet.create({
   containerStyle: {
     backgroundColor: '#23359d',
     borderColor: '#23359d',
+    width: 175,
+    marginTop: 18,
   },
 
   itemTextStyle: {

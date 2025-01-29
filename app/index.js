@@ -23,6 +23,7 @@ export default function MainPage() {
                 source={require('../assets/mohsPAC.jpg')}
             />
             <View style={styles.searchContainer}>
+                <Text style={styles.searchStyle}> search </Text>
                 <DropdownComponent />
                 <Link href='./BusinessPage'>sus</Link>
             </View>
@@ -58,6 +59,12 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
         borderColor: '#eeeeee',
         backgroundColor: 'white',
+    },
+
+    searchStyle: {
+        color: 'grey',
+        marginRight: 20,
+        fontSize: 16,
     },
 
     headerContainer: {
