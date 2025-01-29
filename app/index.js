@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
-
+import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Link } from 'expo-router';
 
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
 import DropdownComponent from '../components/DropdownComponent';
+import BusinessPage from './BusinessPage';
 
 const events = [
     { id: 1, name: "event1", month: 1, date: 5 },
@@ -15,40 +16,38 @@ const events = [
 
 export default function MainPage() {
     return (
-        <ImageBackground
-            style={styles.imageStyle}
-            source={require('../assets/moanaluaIcon.png')}
-        >
-            <View style={styles.container}>
-                <View style={styles.searchContainer}>
-                    <DropdownComponent />
-                </View>
-                <ScrollView style={styles.container}>
-                    <View style={styles.headerContainer}>
-                        <Image
-                            style={styles.imageStyle}
-                            source={require('../assets/moanaluaIcon.png')}
-                        />
-                        <Header> CTE </Header>
-                    </View>
-                    <Image
-                        style={styles.backgroundImageStyle}
-                        source={require('../assets/mohsPAC.jpg')}
-                    />
 
-                    <View>
-                        <Calendar style={styles.calendarContainer}> {events} </Calendar>
-                    </View>
-                </ScrollView>
+        <View style={styles.container}>
+            <ImageBackground
+                style={styles.backgroundImageStyle}
+                source={require('../assets/mohsPAC.jpg')}
+            />
+            <View style={styles.searchContainer}>
+                <DropdownComponent />
+                <Link href='./BusinessPage'>sus</Link>
             </View>
-        </ImageBackground>
+
+            <ScrollView style={styles.container}>
+                <View style={styles.headerContainer}>
+                    <Image
+                        style={styles.imageStyle}
+                        source={require('../assets/moanaluaIcon.png')}
+                    />
+                    <Header> CTE </Header>
+                </View>
+                <Calendar style={styles.calendarContainer}> {events} </Calendar>
+                <Text style={styles.scrollCheck}>  </Text>
+            </ScrollView>
+
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
+
     },
 
     searchContainer: {
@@ -58,6 +57,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 0.5,
         borderColor: '#eeeeee',
+        backgroundColor: 'white',
     },
 
     headerContainer: {
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderTopWidth: 1,
         alignItems: 'center',
+        backgroundColor: 'white',
     },
 
     dropDownContainer: {
@@ -101,13 +102,18 @@ const styles = StyleSheet.create({
     },
 
     backgroundImageStyle: {
-        height: 550,
-        width: '100%',
         alignSelf: 'center',
         opacity: '78%',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: Dimensions.get("window").width, //for full screen
+        height: Dimensions.get("window").height //for full screen
     },
 
-    calendarContainer: {
-        height: 160,
-    }
+    scrollCheck: {
+        margin: 1000,
+    },
 });

@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
 
   containerStyle: {
     backgroundColor: '#23359d',
+    borderColor: '#23359d',
   },
 
   itemTextStyle: {

@@ -26,6 +26,10 @@ export default function Calendar() {
 const styles = StyleSheet.create({
     calenderContainer: {
         height: 200,
+        marginTop: 100,
+        backgroundColor: 'black',
+        opacity: '50%',
+        marginLeft: 25,
     },
 
     container: {
@@ -36,6 +40,6 @@ const styles = StyleSheet.create({
     eventsContainer: {
         flex: 1,
         flexDirection: 'row',
-        borderLeftWidth: 2,
+        color: 'white',
     },
 });

@@ -21,11 +21,13 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "scheme": "your-app-scheme",
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-router"
     ]
   }
 }
