@@ -5,6 +5,8 @@ import { Link } from 'expo-router';
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
 import DropdownComponent from '../components/DropdownComponent';
+import MainButton from '../components/MainButton';
+
 import BusinessPage from './BusinessPage';
 
 const events = [
@@ -23,9 +25,12 @@ export default function MainPage() {
                 source={require('../assets/mohsPAC.jpg')}
             />
             <View style={styles.searchContainer}>
-                <Text style={styles.searchStyle}> search </Text>
-                <DropdownComponent />
-                <Link href='./BusinessPage'>sus</Link>
+                <Text style={styles.searchStyle}> Search </Text>
+                <DropdownComponent> Departments </DropdownComponent>
+                <DropdownComponent> Teachers </DropdownComponent>
+                <Link href='./BusinessPage'>
+                    <MainButton> Business Page </MainButton>
+                </Link>
             </View>
 
             <ScrollView style={styles.container}>

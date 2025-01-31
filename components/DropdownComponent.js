@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
+import { useNavigation } from '@react-navigation/native';
 
 const data = [
-  { label: 'Automotive', value: '1' },
-  { label: 'Business', value: '2' },
-  { label: 'Computer Science', value: '3' },
-  { label: 'Construction', value: '4' },
-  { label: 'Culinary', value: '5' },
-  { label: 'Engineering', value: '6' },
-  { label: 'Fashion', value: '7' },
-  { label: 'Graphics', value: '8' },
-  { label: 'Health Services', value: '9' },
-  { label: 'Media (MeneMac)', value: '10' },
+  { label: 'Automotive', value: '1', href: 'AutomotivePage' },
+  { label: 'Business', value: '2', href: 'BusinessPage' },
+  { label: 'Computer Science', value: '3', href: 'CSPage' },
+  { label: 'Construction', value: '4', href: 'ConstructionPage' },
+  { label: 'Culinary', value: '5', href: 'CulinaryPage' },
+  { label: 'Engineering', value: '6', href: 'EngineeringPage' },
+  { label: 'Fashion', value: '7', href: 'FashionPage' },
+  { label: 'Graphics', value: '8', href: 'GraphicsPage' },
+  { label: 'Health Services', value: '9', href: 'HealthPage' },
+  { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
 ];
 
 
-const DropdownComponent = () => {
+const DropdownComponent = ({ children }) => {
   const [value, setValue] = useState(null);
+  const navigation = useNavigation();
+
+  const handleChange = (item) => {
+    setValue(item.value);
+    navigation.navigate(item.href);
+  };
+
 
   return (
     <Dropdown
@@ -33,11 +41,10 @@ const DropdownComponent = () => {
       maxHeight={300}
       labelField="label"
       valueField="value"
-      placeholder="Departments"
+      placeholder={children}
+      //disable={true}
       value={value}
-      onChange={item => {
-        setValue(item.value);
-      }}
+      onChange={handleChange}
     />
   );
 };
@@ -49,7 +56,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     height: 50,
   },
-  
+
   icon: {
     marginRight: 5,
   },
