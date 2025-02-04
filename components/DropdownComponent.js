@@ -42,7 +42,6 @@ const DropdownComponent = ({ children }) => {
       labelField="label"
       valueField="value"
       placeholder={children}
-      //disable={true}
       value={value}
       onChange={handleChange}
     />

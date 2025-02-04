@@ -7,7 +7,7 @@ import Calendar from '../components/Calendar';
 import DropdownComponent from '../components/DropdownComponent';
 import MainButton from '../components/MainButton';
 
-import BusinessPage from './BusinessPage';
+import PageHeader from '../components/PageHeader';
 
 const events = [
     { id: 1, name: "event1", month: 1, date: 5 },
@@ -24,14 +24,7 @@ export default function MainPage() {
                 style={styles.backgroundImageStyle}
                 source={require('../assets/mohsPAC.jpg')}
             />
-            <View style={styles.searchContainer}>
-                <Text style={styles.searchStyle}> Search </Text>
-                <DropdownComponent> Departments </DropdownComponent>
-                <DropdownComponent> Teachers </DropdownComponent>
-                <Link href='./BusinessPage'>
-                    <MainButton> Business Page </MainButton>
-                </Link>
-            </View>
+            <PageHeader />
 
             <ScrollView style={styles.container}>
                 <View style={styles.headerContainer}>
@@ -55,23 +48,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
 
     },
-
-    searchContainer: {
-        flex: 0.17,
-        flexDirection: 'row-reverse',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        borderBottomWidth: 0.5,
-        borderColor: '#eeeeee',
-        backgroundColor: 'white',
-    },
-
-    searchStyle: {
-        color: 'grey',
-        marginRight: 20,
-        fontSize: 16,
-    },
-
+    
     headerContainer: {
         height: 120,
         flexDirection: 'row',
