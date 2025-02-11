@@ -6,10 +6,10 @@ import Calendar from '../components/Calendar';
 import PageHeader from '../components/PageHeader';
 
 const events = [
-    { id: 1, name: "event1", month: 1, date: 5 },
-    { id: 2, name: "event2", month: 3, date: 10 },
-    { id: 3, name: "event3", month: 7, date: 2 },
-    { id: 4, name: "event4", month: 11, date: 7 },
+    { id: 1, name: "Eat good food", month: 1, date: 5 },
+    { id: 2, name: "Play the piano", month: 3, date: 10 },
+    { id: 3, name: "Go to costco", month: 7, date: 2 },
+    { id: 4, name: "double chunk chocolate cookie", month: 11, date: 7 },
 ];
 
 export default function MainPage() {

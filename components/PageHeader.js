@@ -9,13 +9,13 @@ import { Image } from "react-native-web";
 const departments = [
     { label: 'Automotive', value: '1', href: 'AutomotivePage' },
     { label: 'Business', value: '2', href: 'BusinessPage' },
-    { label: 'Computer Science', value: '3', href: 'CSPage' },
-    { label: 'Construction', value: '4', href: 'ConstructionPage' },
+    { label: 'Computer Science', value: '3', href: 'ComputerSciencePage' },
+    { label: 'Construction', value: '4', href: 'BuildingAndConstructionPage' },
     { label: 'Culinary', value: '5', href: 'CulinaryPage' },
     { label: 'Engineering', value: '6', href: 'EngineeringPage' },
     { label: 'Fashion', value: '7', href: 'FashionPage' },
     { label: 'Graphics', value: '8', href: 'GraphicsPage' },
-    { label: 'Health Services', value: '9', href: 'HealthPage' },
+    { label: 'Health Services', value: '9', href: 'HealthServicesPage' },
     { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
 ];
 
