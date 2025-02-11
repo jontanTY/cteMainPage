@@ -3,21 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import { useNavigation } from '@react-navigation/native';
 
-const data = [
-  { label: 'Automotive', value: '1', href: 'AutomotivePage' },
-  { label: 'Business', value: '2', href: 'BusinessPage' },
-  { label: 'Computer Science', value: '3', href: 'CSPage' },
-  { label: 'Construction', value: '4', href: 'ConstructionPage' },
-  { label: 'Culinary', value: '5', href: 'CulinaryPage' },
-  { label: 'Engineering', value: '6', href: 'EngineeringPage' },
-  { label: 'Fashion', value: '7', href: 'FashionPage' },
-  { label: 'Graphics', value: '8', href: 'GraphicsPage' },
-  { label: 'Health Services', value: '9', href: 'HealthPage' },
-  { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
-];
-
-
-const DropdownComponent = ({ children }) => {
+const DropdownComponent = ({ children, arrData }) => {
   const [value, setValue] = useState(null);
   const navigation = useNavigation();
 
@@ -25,6 +11,8 @@ const DropdownComponent = ({ children }) => {
     setValue(item.value);
     navigation.navigate(item.href);
   };
+
+  const data = arrData;
 
 
   return (

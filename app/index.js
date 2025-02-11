@@ -1,12 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Link } from 'expo-router';
 
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
-import DropdownComponent from '../components/DropdownComponent';
-import MainButton from '../components/MainButton';
-
 import PageHeader from '../components/PageHeader';
 
 const events = [
@@ -18,7 +14,6 @@ const events = [
 
 export default function MainPage() {
     return (
-
         <View style={styles.container}>
             <ImageBackground
                 style={styles.backgroundImageStyle}
