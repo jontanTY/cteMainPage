@@ -19,20 +19,19 @@ const departments = [
 
 const teachers = [
     { label: 'Mr. Andersson', value: '1', href: 'AutomotivePage' },
-    { label: 'Mr. Murray', value: '2', href: 'ConstructionPage' },
-    { label: 'Ms. Kramer', value: '3', href: 'BusinessPage' },
-    { label: 'Ms. Yonamine', value: '4', href: 'BusinessPage' },
-    { label: 'Ms. Pate', value: '5', href: 'BusinessPage' },
+    { label: 'Ms. Kramer', value: '2', href: 'BusinessPage' },
+    { label: 'Ms. Yonamine', value: '3', href: 'BusinessPage' },
+    { label: 'Ms. Pate', value: '4', href: 'BusinessPage' },
+    { label: 'Mr. Murray', value: '5', href: 'ConstructionPage' },
     { label: 'Mr. Mitsuda', value: '6', href: 'CulinaryPage' },
     { label: 'Ms. Perkins', value: '7', href: 'CulinaryPage' },
-    { label: 'Mr. Hashizume', value: '8', href: 'EngineeringPage' },
+    { label: 'Mr. Hashizume', value: '8', href: 'EngineeringPage' }, //also hosa teacher
     { label: 'Mr. Komar', value: '9', href: 'EngineeringPage' },
     { label: 'Mr. Masuda', value: '10', href: 'FashionPage' },
-    { label: 'Mr. Zavala', value: '12', href: 'MediaPage' },
-    { label: 'Mr. Ikenaga', value: '13', href: 'MediaPage' },
-    { label: 'Mr. Nishimura', value: '14', href: 'MediaPage' },
-    { label: 'Ms. Hashizume', value: '15', href: 'GraphicsPage' },
-    { label: 'Ms. Harada', value: '16', href: 'HealthPage' },
+    { label: 'Mr. Nishimura', value: '11', href: 'GraphicsPage' },
+    { label: 'Ms. Harada', value: '12', href: 'HealthPage' },
+    { label: 'Mr. Zavala', value: '13', href: 'MediaPage' },
+    { label: 'Mr. Ikenaga', value: '14', href: 'MediaPage' },
 
 ];
 
