@@ -11,20 +11,18 @@ import PageHeader from '../components/PageHeader';
 
 export default function AboutUsPage() {
     return (
-        <View>
-            <View>
-            <Image
-                style={styles.backgroundImageStyle}
-                source={require('../assets/mohsPAC.jpg')}
-            />
-            
+        <View style={styles.container}>
+            <PageHeader/>
+            <View style={styles.bottomContainer}>
+                <Text style = {styles.textStyle}>
+                    SAMPLE SAMPLE SAMPLE
+                    SAMPLE SAMPLE SAMPLE
+                </Text>
+                <Image
+                    style={styles.backgroundImageStyle}
+                    source={require('../assets/mohsPAC.jpg')}
+                />
             </View>
-            <PageHeader style={styles.container}/>
-            <Text style={styles.textContainer}>
-                SAMPLE SAMPLE SAMPLE
-                SAMPLE SAMPLE SAMPLE
-                
-            </Text>
         </View>
     );
 }
@@ -41,17 +39,22 @@ const styles = StyleSheet.create({
         bottom: 0,
         width: 500, 
         height: 700,
+        marginHorizontal: 500,
     },
 
     container: {
-        backgroundColor: 'gray',
+        flex: 1,
+        backgroundColor: 'transparent',
     },
 
-    imageContainer: {
-        
+    bottomContainer: {
+        flex: 1,
+        backgroundColor: 'transparent',
+        flexDirection: 'row',
     },
 
-    textContainer: {
-        flexDirection:'row',
-    },
+    textStyle: {
+        marginVertical: 250,
+    }
+
 });
