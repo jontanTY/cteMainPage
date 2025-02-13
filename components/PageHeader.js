@@ -10,7 +10,7 @@ export default function PageHeader() {
             <Text style={styles.searchStyle}> Search </Text>
             <DropdownComponent> Departments </DropdownComponent>
             <DropdownComponent> Teachers </DropdownComponent>
-            <Link href='./BusinessPage'>
+            <Link href='./AboutUsPage'>
                 <MainButton> Business Page </MainButton>
             </Link>
         </View>
