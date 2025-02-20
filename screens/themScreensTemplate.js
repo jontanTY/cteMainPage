@@ -24,18 +24,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    secondBg: {
-        flex: 1,
-        backgroundColor: 'blue',
-        height: '100%',
-        width: '100%',
-    },
+    // secondBg: {
+    //     flex: 1,
+    //     backgroundColor: 'blue',
+    //     height: '100%',
+    //     width: '100%',
+    // },
     box: {
         height: '100%',
         width: '50%',
         backgroundColor: 'white',
         borderColor: 'black',
-        borderWidth: 5
+        borderWidth: 5,
     }
 
 });
