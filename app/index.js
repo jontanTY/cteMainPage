@@ -25,13 +25,6 @@ export default function MainPage() {
             <PageHeader title={'CTE'} />
 
             <ScrollView style={styles.container}>
-                <View style={styles.headerContainer}>
-                    <Image
-                        style={styles.imageStyle}
-                        source={require('../assets/moanaluaIcon.png')}
-                    />
-                    <Header> CTE </Header>
-                </View>
                 <Calendar style={styles.calendarContainer}> {events} </Calendar>
                 <Text style={styles.scrollCheck}>  </Text>
             </ScrollView>
