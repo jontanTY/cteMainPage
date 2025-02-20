@@ -5,6 +5,7 @@ import MainButton from "./MainButton";
 import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
+import Header from "./Header";
 
 const departments = [
     { label: 'Automotive', value: '1', href: 'AutomotivePage' },
@@ -17,6 +18,15 @@ const departments = [
     { label: 'Graphics', value: '8', href: 'GraphicsPage' },
     { label: 'Health Services', value: '9', href: 'HealthPage' },
     { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
+];
+
+const clubs = [
+  { label: 'DECA', value: '1', href: 'DECAPage' },
+  { label: 'FCCLA', value: '2', href: 'FCCLAPage' },
+  { label: 'HOSA', value: '3', href: 'HOSAPage' },
+  { label: 'Robotics', value: '4', href: 'RoboticsPage' },
+  { label: 'MeneMac', value: '5', href: 'MeneMacPage' },
+  { label: 'Coding Club', value: '6', href: 'CodingPage' },
 ];
 
 const teachers = [
@@ -36,7 +46,7 @@ const teachers = [
     { label: 'Mr. Zavala', value: '14', href: 'MediaPage' },
 ];
 
-export default function PageHeader() {
+export default function PageHeader(props) {
     const [input, setInput] = useState("");
     const [selected, setSelected] = useState([]);
 
@@ -94,11 +104,17 @@ export default function PageHeader() {
               value={input}
             />
             <Text style={styles.searchStyle}> Search </Text>
-            <DropdownComponent> Departments </DropdownComponent>
-            <DropdownComponent> Teachers </DropdownComponent>
+            <DropdownComponent arrData={departments}> Departments </DropdownComponent>
+            <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
+            <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
             <Link href='./AboutUsPage'>
-                <MainButton> Business Page </MainButton>
+                <MainButton> About Us </MainButton>
             </Link>
+            <View style={styles.headerContainer}>
+                <Header>
+                    {props.title}
+                </Header>
+            </View>
         </View>
     )
 }
@@ -113,6 +129,12 @@ const styles = StyleSheet.create({
         borderColor: '#eeeeee',
         backgroundColor: 'white',
     },
+
+    headerContainer: {
+      justifyContent: 'left',
+      alignContent: 'left'
+    },
+
     textInputStyle: {
         marginLeft: -10,
         marginRight: 20,
@@ -132,4 +154,5 @@ const styles = StyleSheet.create({
         marginRight: 15,
         fontSize: 16,
     },
+
 });

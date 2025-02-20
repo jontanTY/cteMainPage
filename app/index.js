@@ -22,7 +22,7 @@ export default function MainPage() {
                 style={styles.backgroundImageStyle}
                 source={require('../assets/mohsPAC.jpg')}
             />
-            <PageHeader />
+            <PageHeader title={'CTE'} />
 
             <ScrollView style={styles.container}>
                 <View style={styles.headerContainer}>
