@@ -4,6 +4,7 @@ import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, View 
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
 import PageHeader from '../components/PageHeader';
+import themScreensTemplate from '../screens/themScreensTemplate';
 
 const events = [
     { id: 1, name: "Eat good food", month: 1, date: 5 },
@@ -13,7 +14,7 @@ const events = [
 ];
 
 export default function MainPage() {
-    return (
+    /*return (
         <View style={styles.container}>
             <ImageBackground
                 style={styles.backgroundImageStyle}
@@ -34,7 +35,8 @@ export default function MainPage() {
             </ScrollView>
 
         </View>
-    );
+    );*/
+    return(themScreensTemplate());
 }
 
 const styles = StyleSheet.create({

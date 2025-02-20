@@ -56,6 +56,7 @@ export default function PageHeader() {
       ];
 
     return (
+      
         <View style={styles.searchContainer}>
             <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey', }}>
               <MultiSelect
@@ -96,6 +97,13 @@ export default function PageHeader() {
             <Text style={styles.searchStyle}> Search </Text>
             <DropdownComponent arrData={departments}> Departments </DropdownComponent>
             <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
+            <View style={styles.leftAlign}>
+              <Image
+                        style={styles.imageStyle}
+                        source={require('../assets/moanaluaIcon.png')}
+                    />
+              <Text style={styles.textStyle}>CTE</Text>
+            </View>
         </View>
     )
 }
@@ -106,9 +114,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row-reverse',
         flexWrap: 'wrap',
         alignItems: 'center',
-        borderBottomWidth: 0.5,
-        borderColor: '#eeeeee',
+        borderBottomWidth: 1,
+        borderColor: 'black',
         backgroundColor: 'white',
+        paddingBottom: 80
     },
     textInputStyle: {
         marginLeft: -10,
@@ -129,4 +138,23 @@ const styles = StyleSheet.create({
         marginRight: 15,
         fontSize: 16,
     },
+
+    imageStyle: {
+        height:80,
+        width: 80,
+        flexDirection: 'row',
+        marginLeft: 5,
+        marginTop: 5
+    },
+
+    leftAlign:{
+      justifyContent: 'left',
+      width: '55%',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    textStyle: {
+      fontSize: 55,
+      paddingLeft: 16
+    }
 });
