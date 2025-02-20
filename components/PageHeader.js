@@ -9,13 +9,13 @@ import { Image } from "react-native-web";
 const departments = [
     { label: 'Automotive', value: '1', href: 'AutomotivePage' },
     { label: 'Business', value: '2', href: 'BusinessPage' },
-    { label: 'Computer Science', value: '3', href: 'CSPage' },
-    { label: 'Construction', value: '4', href: 'ConstructionPage' },
+    { label: 'Computer Science', value: '3', href: 'ComputerSciencePage' },
+    { label: 'Construction', value: '4', href: 'BuildingAndConstructionPage' },
     { label: 'Culinary', value: '5', href: 'CulinaryPage' },
     { label: 'Engineering', value: '6', href: 'EngineeringPage' },
     { label: 'Fashion', value: '7', href: 'FashionPage' },
     { label: 'Graphics', value: '8', href: 'GraphicsPage' },
-    { label: 'Health Services', value: '9', href: 'HealthPage' },
+    { label: 'Health Services', value: '9', href: 'HealthServicesPage' },
     { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
 ];
 
@@ -56,6 +56,7 @@ export default function PageHeader() {
       ];
 
     return (
+      
         <View style={styles.searchContainer}>
             <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey', }}>
               <MultiSelect
@@ -96,20 +97,31 @@ export default function PageHeader() {
             <Text style={styles.searchStyle}> Search </Text>
             <DropdownComponent arrData={departments}> Departments </DropdownComponent>
             <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
+            <View style={styles.leftAlign}>
+              <Image
+                        style={styles.imageStyle}
+                        source={require('../assets/moanaluaIcon.png')}
+                    />
+              <Text style={styles.textStyle}>CTE</Text>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     searchContainer: {
-        flex: 0.17,
+        flex: 0.10,
         flexDirection: 'row-reverse',
         flexWrap: 'wrap',
         alignItems: 'center',
-        borderBottomWidth: 0.5,
-        borderColor: '#eeeeee',
+        justifyContent: 'center',
+        borderBottomWidth: 1,
+        borderColor: 'black',
         backgroundColor: 'white',
-    },
+        paddingBottom: 50,
+        paddingTop: 10,
+        width: '100%'
+        },
     textInputStyle: {
         marginLeft: -10,
         marginRight: 20,
@@ -129,4 +141,23 @@ const styles = StyleSheet.create({
         marginRight: 15,
         fontSize: 16,
     },
+
+    imageStyle: {
+        height:80,
+        width: 80,
+        flexDirection: 'row',
+        marginLeft: 5,
+        marginTop: 5
+    },
+
+    leftAlign:{
+      justifyContent: 'left',
+      width: '55%',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+    textStyle: {
+      fontSize: 55,
+      paddingLeft: 16
+    }
 });
