@@ -5,8 +5,8 @@ import PageHeader from "../components/PageHeader";
 export default function themScreensTemplate() {
     return (
         <View style={styles.fullBg}>
+            <PageHeader /> 
             <ScrollView style={styles.secondBg}>
-                <PageHeader />
                     <View style={styles.box}>
 
                     </View>
@@ -21,16 +21,18 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         backgroundColor: '#9de9f5',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     secondBg: {
-        flexGrow: 1,
+        flex: 1,
         backgroundColor: 'blue',
         height: '100%',
         width: '100%',
     },
     box: {
-        height: '50%',
-        width: '30%',
+        height: '100%',
+        width: '50%',
         backgroundColor: 'white',
         borderColor: 'black',
         borderWidth: 5

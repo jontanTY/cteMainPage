@@ -110,15 +110,18 @@ export default function PageHeader() {
 
 const styles = StyleSheet.create({
     searchContainer: {
-        flex: 0.17,
+        flex: 0.10,
         flexDirection: 'row-reverse',
         flexWrap: 'wrap',
         alignItems: 'center',
+        justifyContent: 'center',
         borderBottomWidth: 1,
         borderColor: 'black',
         backgroundColor: 'white',
-        paddingBottom: 80
-    },
+        paddingBottom: 50,
+        paddingTop: 10,
+        width: '100%'
+        },
     textInputStyle: {
         marginLeft: -10,
         marginRight: 20,
