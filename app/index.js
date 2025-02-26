@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -13,25 +14,44 @@ const events = [
 ];
 
 export default function MainPage() {
+    const [backgroundImage, setBackgroundImage] = useState(require('../assets/mohsPAC.jpg'));
+
+    const handleScroll = (event) => {
+        const scrollY = event.nativeEvent.contentOffset.y;
+
+        // Example logic to change background image based on scroll position
+        if (scrollY < 400) {
+            setBackgroundImage(require('../assets/mohsPAC.jpg'));
+        } else if (scrollY >= 400 && scrollY < 800) {
+            setBackgroundImage(require('../assets/MeneMart-DECA.png'));
+        } else {
+            setBackgroundImage(require('../assets/mohsPAC.jpg'));
+        }
+    };
+
     return (
         <View style={styles.container}>
             <ImageBackground
                 style={styles.backgroundImageStyle}
-                source={require('../assets/mohsPAC.jpg')}
-            />
-            <PageHeader />
+                source={backgroundImage}
+            >
 
-            <ScrollView style={styles.container}>
-                <View style={styles.headerContainer}>
-                    <Image
-                        style={styles.imageStyle}
-                        source={require('../assets/moanaluaIcon.png')}
-                    />
-                    <Header> CTE </Header>
-                </View>
-                <Calendar style={styles.calendarContainer}> {events} </Calendar>
-                <Text style={styles.scrollCheck}>  </Text>
-            </ScrollView>
+                <PageHeader />
+
+                <ScrollView style={styles.container} onScroll={handleScroll} scrollEventThrottle={16}>
+                    <View style={styles.headerContainer}>
+
+                        <Image
+                            style={styles.imageStyle}
+                            source={require('../assets/moanaluaIcon.png')}
+                        />
+                        <Header> CTE </Header>
+                    </View>
+                    <Calendar style={styles.calendarContainer}> {events} </Calendar>
+                    <View style={styles.placeholderStyle}>
+                    </View>
+                </ScrollView>
+            </ImageBackground>
 
         </View>
     );
@@ -43,7 +63,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
 
     },
-    
+
     headerContainer: {
         height: 120,
         flexDirection: 'row',
@@ -88,16 +108,24 @@ const styles = StyleSheet.create({
     backgroundImageStyle: {
         alignSelf: 'center',
         opacity: '78%',
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
         width: Dimensions.get("window").width, //for full screen
-        height: Dimensions.get("window").height //for full screen
+        height: Dimensions.get("window").height, //for full screen
     },
 
-    scrollCheck: {
-        margin: 1000,
+    backgroundImageStyle1: {
+        alignSelf: 'center',
+        opacity: '78%',
+        position: 'absolute',
+        top: 500,
+        width: Dimensions.get("window").width, //for full screen
+        height: Dimensions.get("window").height, //for full screen
+    },
+
+
+    placeholderStyle: {
+        backgroundColor: 'transparent',
+        width: Dimensions.get("window").width,
+        height: 450,
+        marginTop: 150,
     },
 });

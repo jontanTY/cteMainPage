@@ -27,10 +27,10 @@ export default function Calendar() {
 const styles = StyleSheet.create({
     calenderContainer: {
         height: 200,
-        marginTop: 100,
+        marginTop: 75,
         backgroundColor: 'black',
         opacity: '50%',
-        marginLeft: 25,
+        marginRight: 200,
     },
 
     container: {
