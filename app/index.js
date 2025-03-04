@@ -14,7 +14,7 @@ const events = [
 ];
 
 export default function MainPage() {
-    /*return (
+    return (
         <View style={styles.container}>
             <ImageBackground
                 style={styles.backgroundImageStyle}
@@ -35,8 +35,8 @@ export default function MainPage() {
             </ScrollView>
 
         </View>
-    );*/
-    return(themScreensTemplate());
+    );
+
 }
 
 const styles = StyleSheet.create({
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
 
     },
-    
+
     headerContainer: {
         height: 120,
         flexDirection: 'row',
