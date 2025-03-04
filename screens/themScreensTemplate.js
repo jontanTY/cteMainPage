@@ -103,10 +103,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
 
-    placeholder: {
-
-        borderWidth: 2,
-    },
-
 
 });
