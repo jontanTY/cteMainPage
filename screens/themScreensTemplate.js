@@ -20,15 +20,18 @@ export default function themScreensTemplate() {
 
                         </View>
                     </View>
+
+
                     <View style={styles.box2}>
-                    <View style={styles.horizAlign}>
-                        <View style={styles.profileBox}>
-                            <Image style={styles.imageParent} source={require('../assets/personIcon.png')} />
-                        </View>
-                        <View style={styles.HeaderParent}>
-                            <Header>Example Class</Header>
+                        <View style={styles.horizAlign}>
+                            <View style={styles.HeaderParent2}>
+                                <Header>Class Info Here</Header>
+                            </View>
                         </View>
                     </View>
+
+                    <View style={styles.placeholder}>
+
                     </View>
                 </View>
             </ScrollView>
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         height: '80%',
         width: '100%',
-        paddingTop: 10
+        paddingTop: 150
     },
     box: {
         height: 200,
@@ -78,20 +81,32 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingLeft: 60
     },
+    HeaderParent2:
+    {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
     scrollviewStyle: {
         flexGrow: 1,
         width: '100%'
     },
     box2: {
-        height: 200,
-        width: '50%',
+        height: 450,
+        width: '75%',
         backgroundColor: 'white',
         borderColor: 'black',
         borderWidth: 3,
-        marginTop: 20,
+        marginTop: 150,
+        marginBottom: 25,
         alignItems: 'center',
         justifyContent: 'center'
-    }
+    },
+
+    placeholder: {
+
+        borderWidth: 2,
+    },
 
 
 });
