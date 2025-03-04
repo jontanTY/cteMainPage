@@ -110,7 +110,6 @@ export default function PageHeader() {
 
 const styles = StyleSheet.create({
     searchContainer: {
-        flex: 0.10,
         flexDirection: 'row-reverse',
         flexWrap: 'wrap',
         alignItems: 'center',
@@ -118,7 +117,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: 'black',
         backgroundColor: 'white',
-        paddingBottom: 50,
+        paddingBottom: 15,
         paddingTop: 10,
         width: '100%'
         },
