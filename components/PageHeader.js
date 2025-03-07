@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from "react-native-web";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native-web";
 import { Link } from "expo-router";
 import { useState } from "react";
 import MainButton from "./MainButton";
@@ -20,15 +20,6 @@ const departments = [
     { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
 ];
 
-const clubs = [
-  { label: 'DECA', value: '1', href: 'DECAPage' },
-  { label: 'FCCLA', value: '2', href: 'FCCLAPage' },
-  { label: 'HOSA', value: '3', href: 'HOSAPage' },
-  { label: 'Robotics', value: '4', href: 'RoboticsPage' },
-  { label: 'MeneMac', value: '5', href: 'MeneMacPage' },
-  { label: 'Coding Club', value: '6', href: 'CodingPage' },
-];
-
 const teachers = [
     { label: 'Mr. Andersson', value: '1', href: 'AutomotivePage' },
     { label: 'Ms. Harada', value: '2', href: 'HealthPage' },
@@ -46,7 +37,7 @@ const teachers = [
     { label: 'Mr. Zavala', value: '14', href: 'MediaPage' },
 ];
 
-export default function PageHeader(props) {
+export default function PageHeader() {
     const [input, setInput] = useState("");
     const [selected, setSelected] = useState([]);
 
@@ -68,9 +59,10 @@ export default function PageHeader(props) {
     return (
       
         <View style={styles.searchContainer}>
-            <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey', }}>
-              <MultiSelect
-                style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+          <View style={styles.headerContainer}>
+            <View>
+              <MultiSelect 
+                style={{ width:110, marginRight: 25, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
                 placeholderStyle={{ color: 'grey'}}
                 // iconStyle={styles.iconStyle}
                 activeColor="lightgrey"
@@ -107,11 +99,15 @@ export default function PageHeader(props) {
             <Text style={styles.searchStyle}> Search </Text>
             <DropdownComponent arrData={departments}> Departments </DropdownComponent>
             <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
-            <View style={styles.leftAlign}>
+            <Link href='./AboutUsPage'>
+              <Button title = 'About Us'></Button>
+            </Link>
+            </View>
+            <View style = {styles.leftAlign}>
               <Image
-                        style={styles.imageStyle}
-                        source={require('../assets/moanaluaIcon.png')}
-                    />
+                  style={styles.imageStyle}
+                  source={require('../assets/moanaluaIcon.png')}
+              />
               <Text style={styles.textStyle}>CTE</Text>
             </View>
         </View>
@@ -120,7 +116,7 @@ export default function PageHeader(props) {
 
 const styles = StyleSheet.create({
     searchContainer: {
-        flex: 0.10,
+        height: 100,
         flexDirection: 'row-reverse',
         flexWrap: 'wrap',
         alignItems: 'center',
@@ -134,13 +130,17 @@ const styles = StyleSheet.create({
         },
 
     headerContainer: {
-      justifyContent: 'left',
-      alignContent: 'left'
+      justifyContent: 'flex-end',
+      flexDirection: 'row',
+      alignItems: 'center',
+      width: '100%',
+      marginRight: 100,
+      marginTop: 15,
+      
     },
 
     textInputStyle: {
-        marginLeft: -10,
-        marginRight: 20,
+  
         borderWidth: 2,
         borderColor: 'grey',
         width: 100,
@@ -153,8 +153,7 @@ const styles = StyleSheet.create({
       },
     searchStyle: {
         color: 'grey',
-        marginTop: -5,
-        marginRight: 15,
+    
         fontSize: 16,
     },
 
@@ -162,18 +161,23 @@ const styles = StyleSheet.create({
         height:80,
         width: 80,
         flexDirection: 'row',
-        marginLeft: 5,
-        marginTop: 5
+      
     },
 
     leftAlign:{
-      justifyContent: 'left',
-      width: '55%',
+      justifyContent: 'flex-start',
       flexDirection: 'row',
-      alignItems: 'center'
+      alignItems: 'center',
+      width: '100%',
+      top: -10,
+      left: 10,
+      flex: 0.1,
+      marginRight: -100,
+      marginTop: 10,
+    
     },
     textStyle: {
       fontSize: 55,
-      paddingLeft: 16
+      
     }
 });

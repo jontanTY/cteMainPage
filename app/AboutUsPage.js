@@ -14,7 +14,7 @@ export default function AboutUsPage() {
         <View style={styles.container}>
             
             <View style = {styles.headerContainer}>
-                <PageHeader title={'About Us'} />
+                <PageHeader title={'About Us'}/>
             </View>
             <ScrollView style={styles.bottomContainer}>
                 <Text style = {styles.textStyle}>
@@ -63,12 +63,16 @@ const styles = StyleSheet.create({
 
     headerContainer: {
         textAlign: 'left',
+        justifyContent: 'top',
+        flex: 0.2
     },
 
 
     container: {
         flex: 1,
         backgroundColor: 'transparent',
+        justifyContent: 'top',
+        backgroundColor: '#c9ada7',
     },
 
     bottomContainer: {
