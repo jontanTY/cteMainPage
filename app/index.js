@@ -1,8 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
+
+
 import PageHeader from '../components/PageHeader';
 import themScreensTemplate from '../screens/themScreensTemplate';
 
@@ -20,7 +23,7 @@ export default function MainPage() {
                 style={styles.backgroundImageStyle}
                 source={require('../assets/mohsPAC.jpg')}
             />
-            <PageHeader />
+            <PageHeader title={'CTE'} />
 
             <ScrollView style={styles.container}>
                 <Calendar style={styles.calendarContainer}> {events} </Calendar>

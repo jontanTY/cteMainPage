@@ -5,6 +5,7 @@ import MainButton from "./MainButton";
 import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
+import Header from "./Header";
 
 const departments = [
   { label: 'Automotive', value: '1', href: 'AutomotivePage' },
@@ -30,6 +31,15 @@ const departments = [
     { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
 ];
 
+const clubs = [
+  { label: 'DECA', value: '1', href: 'DECAPage' },
+  { label: 'FCCLA', value: '2', href: 'FCCLAPage' },
+  { label: 'HOSA', value: '3', href: 'HOSAPage' },
+  { label: 'Robotics', value: '4', href: 'RoboticsPage' },
+  { label: 'MeneMac', value: '5', href: 'MeneMacPage' },
+  { label: 'Coding Club', value: '6', href: 'CodingPage' },
+];
+
 const teachers = [
   { label: 'Mr. Andersson', value: '1', href: 'AutomotivePage' },
   { label: 'Ms. Harada', value: '2', href: 'HealthPage' },
@@ -46,6 +56,7 @@ const teachers = [
   { label: 'Ms. Yonamine', value: '13', href: 'BusinessPage' },
   { label: 'Mr. Zavala', value: '14', href: 'MediaPage' },
 ];
+
 
 export default function PageHeader() {
   const [input, setInput] = useState("");
@@ -154,6 +165,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
+export default function PageHeader(props) {
+    const [input, setInput] = useState("");
+    const [selected, setSelected] = useState([]);
+
   imageStyle: {
     height: 80,
     width: 80,
@@ -239,6 +254,12 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         width: '100%'
         },
+
+    headerContainer: {
+      justifyContent: 'left',
+      alignContent: 'left'
+    },
+
     textInputStyle: {
         marginLeft: -10,
         marginRight: 20,
