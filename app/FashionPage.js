@@ -47,7 +47,7 @@ export default function FashionPage() {
                         </View>
 
                         <View style={styles.imageBox}>
-
+                        
                         </View>
 
                     </View>
