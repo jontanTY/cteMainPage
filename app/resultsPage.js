@@ -4,7 +4,7 @@ import ResultObjectReturn from "../components/ResultObjectReturn";
 
 export default function resultsPage(props) {
     const [list, setList] = useState([{title: 'result1', score: 5, description: 'awdawd', URL: "www.1"},
-        {title: 'result1', score: 5, description: 'awdawd2', URL: "www.2"}]);
+        {title: 'result2', score: 5, description: 'awdawd2', URL: "www.2"}]);
 
     let id = 0;
 
@@ -14,27 +14,8 @@ export default function resultsPage(props) {
     //     id++;
     // }
 
-    // const getInitialURL = async () => {
-    //         const url = await Linking.getInitialURL();
-    //         if (url) {
-    //             console.log('Initial URL:', url);
-    //             // Handle the URL as needed
-    //         }
-    //         return url;
-    //     };
-
-    // const sortScoreList = (list) =>{
-    //     let newList = list;
-    //     newList.sort((a, b) => {
-    //         return a.score - b.score;
-    //     });
-    //     setList(newlist);
-    // }
-    // sortScoreList();
-
     return (
         <View>
-            <Text>lol</Text>
             <FlatList
                 data={list}
                 renderItem={(itemData) => {
