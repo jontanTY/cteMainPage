@@ -116,10 +116,12 @@ export default function PageHeader() {
             </Link>
             </View>
             <View style = {styles.leftAlign}>
-              <Image
-                  style={styles.imageStyle}
-                  source={require('../assets/moanaluaIcon.png')}
-              />
+              <Link href='..//index'>
+                <Image
+                    style={styles.imageStyle}
+                    source={require('../assets/moanaluaIcon.png')}
+                />
+              </Link>
               <Text style={styles.textStyle}>CTE</Text>
             </View>
         </View>
