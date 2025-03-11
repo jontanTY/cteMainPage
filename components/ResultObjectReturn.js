@@ -1,21 +1,29 @@
-import { Linking } from "expo-router";
+import { useEffect, useState } from "react";
 import { Text, Pressable, View } from "react-native-web";
+import * as Linking from 'expo-linking';
 
 export default function ResultObjectReturn(props) {
+    const [url, setURL] = useState("");
 
     const getInitialURL = async () => {
-        const url = await Linking.getInitialURL();
-        if (url) {
-            console.log('Initial URL:', url);
+        const initialURL = await Linking.getInitialURL();
+        //console.log("Initial URL: " + initialURL);
+        if (initialURL) {
+            setURL(initialURL);
             // Handle the URL as needed
         }
-        return url;
     };
+
+    useEffect(() => {
+        getInitialURL();
+    }, []);
+
+    console.log("URL: " + url);
     console.log("Des: " + props.description);
     console.log("Title: " + props.titleText);
     
     let searchInfo = {
-        "URL": getInitialURL(),
+        "URL": url,
         "query": props.input,
         "clicked": '1'
     }
@@ -24,9 +32,9 @@ export default function ResultObjectReturn(props) {
 
     return (
         <View>
-            <Pressable></Pressable>
+            <Pressable>{props.title}</Pressable>
             <Text>{props.description}</Text>
-            <Text>wowzerwthatsa result for sure {props.description}{props.titleText}{props.keyNum}</Text>
+            <Text>wowzerwthatsa result for sure {props.description}{props.keyNum}</Text>
         </View>
     );
 }
