@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
 
-export default function themScreensTemplate() {
+export default function BuildingAndConstructionPage() {
     return (
         <View style={styles.fullBg}>
             <PageHeader />

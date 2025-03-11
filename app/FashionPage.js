@@ -1,14 +1,14 @@
 import { Text, View, ScrollView, StyleSheet, Image } from "react-native-web";
 import { Link } from "expo-router";
-import Video, { VideoRef } from "react-native-video";
+// import Video, { VideoRef } from "react-native-video";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
 import { useRef } from "react";
 
 export default function FashionPage() {
-    const VideoPlayer = () => {
-        const videoRef = useRef<VideoRef>(null);
-        const background = require()
+    //const VideoPlayer = () => {
+        //const videoRef = useRef<VideoRef>(null);
+        //const background = require()
         return (
             <View style={styles.fullBg}>
                 <PageHeader />
@@ -57,7 +57,6 @@ export default function FashionPage() {
                 </ScrollView>
             </View>
         );
-    }
 }
 
 const styles = StyleSheet.create({

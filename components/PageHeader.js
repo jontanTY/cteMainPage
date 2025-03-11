@@ -18,17 +18,7 @@ const departments = [
   { label: 'Graphics', value: '8', href: 'GraphicsPage' },
   { label: 'Health Services', value: '9', href: 'HealthServicesPage' },
   { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
-
-    { label: 'Automotive', value: '1', href: 'AutomotivePage' },
-    { label: 'Business', value: '2', href: 'BusinessPage' },
-    { label: 'Computer Science', value: '3', href: 'ComputerSciencePage' },
-    { label: 'Construction', value: '4', href: 'BuildingAndConstructionPage' },
-    { label: 'Culinary', value: '5', href: 'CulinaryPage' },
-    { label: 'Engineering', value: '6', href: 'EngineeringPage' },
-    { label: 'Fashion', value: '7', href: 'FashionPage' },
-    { label: 'Graphics', value: '8', href: 'GraphicsPage' },
-    { label: 'Health Services', value: '9', href: 'HealthServicesPage' },
-    { label: 'Media (MeneMac)', value: '10', href: 'MediaPage' },
+  { label: 'Film', value: '10', href: 'FilmPage' },
 ];
 
 const clubs = [
@@ -132,6 +122,62 @@ export default function PageHeader() {
   )
 }
 
+// export default function PageHeader(props) {
+//   const [input, setInput] = useState("");
+//   const [selected, setSelected] = useState([]);
+//   return (
+    
+//       <View style={styles.searchContainer}>
+//           <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey', }}>
+//             <MultiSelect
+//               style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+//               placeholderStyle={{ color: 'grey'}}
+//               // iconStyle={styles.iconStyle}
+//               activeColor="lightgrey"
+//               itemTextStyle={{color: 'grey'}}
+//               selectedTextStyle={{color: 'grey', fontSize: 15}}
+//               inputSearchStyle={{width: 90}}
+//               showsVerticalScrollIndicator = {false}
+//               dropdownPosition="down"
+//               maxSelect={2}
+//               //search
+//               data={data}
+//               labelField="label"
+//               valueField="value"
+//               placeholder="Filter"
+//               searchPlaceholder="Search..."
+//               value={selected}
+//               onChange={item => {
+//                 setSelected(item);
+//               }}
+//               renderLeftIcon={() => (
+//                 <Image
+//                   style={[{ height: 5, width: 5, opacity: 0 }]}
+//                   source={require('../assets/icon.png')}
+//                 />
+//               )}
+//             //selectedStyle={styles.selectedStyle}
+//             />
+//           </View>
+//           <TextInput
+//             style={styles.textInputStyle}
+//             onChangeText={setInput}
+//             value={input}
+//           />
+//           <Text style={styles.searchStyle}> Search </Text>
+//           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
+//           <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
+//           <View style={styles.leftAlign}>
+//             <Image
+//                       style={styles.imageStyle}
+//                       source={require('../assets/moanaluaIcon.png')}
+//                   />
+//             <Text style={styles.textStyle}>CTE</Text>
+//           </View>
+//       </View>
+//   )
+// }
+
 const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row-reverse',
@@ -164,83 +210,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     fontSize: 16,
   },
-
-export default function PageHeader(props) {
-    const [input, setInput] = useState("");
-    const [selected, setSelected] = useState([]);
-
-  imageStyle: {
-    height: 80,
-    width: 80,
-    flexDirection: 'row',
-    marginLeft: 5,
-    marginTop: 5
-  },
-
-  leftAlign: {
-    justifyContent: 'left',
-    width: '55%',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  textStyle: {
-    fontSize: 55,
-    paddingLeft: 16
-  }
-    return (
-      
-        <View style={styles.searchContainer}>
-            <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey', }}>
-              <MultiSelect
-                style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
-                placeholderStyle={{ color: 'grey'}}
-                // iconStyle={styles.iconStyle}
-                activeColor="lightgrey"
-                itemTextStyle={{color: 'grey'}}
-                selectedTextStyle={{color: 'grey', fontSize: 15}}
-                inputSearchStyle={{width: 90}}
-                showsVerticalScrollIndicator = {false}
-                dropdownPosition="down"
-                maxSelect={2}
-                //search
-                data={data}
-                labelField="label"
-                valueField="value"
-                placeholder="Filter"
-                searchPlaceholder="Search..."
-                value={selected}
-                onChange={item => {
-                  setSelected(item);
-                }}
-                renderLeftIcon={() => (
-                  <Image
-                    style={[{ height: 5, width: 5, opacity: 0 }]}
-                    source={require('../assets/icon.png')}
-                  />
-                )}
-              //selectedStyle={styles.selectedStyle}
-              />
-            </View>
-            <TextInput
-              style={styles.textInputStyle}
-              onChangeText={setInput}
-              value={input}
-            />
-            <Text style={styles.searchStyle}> Search </Text>
-            <DropdownComponent arrData={departments}> Departments </DropdownComponent>
-            <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
-            <View style={styles.leftAlign}>
-              <Image
-                        style={styles.imageStyle}
-                        source={require('../assets/moanaluaIcon.png')}
-                    />
-              <Text style={styles.textStyle}>CTE</Text>
-            </View>
-        </View>
-    )
-}
-
-const styles = StyleSheet.create({
     searchContainer: {
         flex: 0.10,
         flexDirection: 'row-reverse',
@@ -250,7 +219,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: 'black',
         backgroundColor: 'white',
-        paddingBottom: 50,
+        paddingBottom: 90,
         paddingTop: 10,
         width: '100%'
         },
