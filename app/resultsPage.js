@@ -23,14 +23,14 @@ export default function resultsPage(props) {
     //         return url;
     //     };
 
-    const sortScoreList = (list) =>{
-        let newList = list;
-        newList.sort((a, b) => {
-            return a.score - b.score;
-        });
-        setList(newlist);
-    }
-    sortScoreList();
+    // const sortScoreList = (list) =>{
+    //     let newList = list;
+    //     newList.sort((a, b) => {
+    //         return a.score - b.score;
+    //     });
+    //     setList(newlist);
+    // }
+    // sortScoreList();
 
     return (
         <View>
