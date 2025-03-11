@@ -19,10 +19,9 @@ export default function MainPage() {
     const handleScroll = (event) => {
         const scrollY = event.nativeEvent.contentOffset.y;
 
-        // Example logic to change background image based on scroll position
-        if (scrollY < 400) {
+        if (scrollY < 610) {
             setBackgroundImage(require('../assets/mohsPAC.jpg'));
-        } else if (scrollY >= 400 && scrollY < 800) {
+        } else if (scrollY >= 610 && scrollY < 1500) {
             setBackgroundImage(require('../assets/MeneMart-DECA.png'));
         } else {
             setBackgroundImage(require('../assets/mohsPAC.jpg'));
@@ -38,7 +37,9 @@ export default function MainPage() {
 
                 <PageHeader />
 
-                <ScrollView style={styles.container} onScroll={handleScroll} scrollEventThrottle={16}>
+
+                <ScrollView style={styles.container} onScroll={handleScroll} scrollEventThrottle={16}
+                >
                     <View style={styles.headerContainer}>
 
                         <Image
@@ -49,6 +50,8 @@ export default function MainPage() {
                     </View>
                     <Calendar style={styles.calendarContainer}> {events} </Calendar>
                     <View style={styles.placeholderStyle}>
+                    </View>
+                    <View style={styles.placeholderStyle1}>
                     </View>
                 </ScrollView>
             </ImageBackground>
@@ -108,6 +111,8 @@ const styles = StyleSheet.create({
     backgroundImageStyle: {
         alignSelf: 'center',
         opacity: '78%',
+        top: 0,
+        left: 0,
         width: Dimensions.get("window").width, //for full screen
         height: Dimensions.get("window").height, //for full screen
     },
@@ -123,6 +128,13 @@ const styles = StyleSheet.create({
 
 
     placeholderStyle: {
+        backgroundColor: 'white',
+        width: Dimensions.get("window").width,
+        height: 650,
+        marginTop: 150,
+    },
+
+    placeholderStyle1: {
         backgroundColor: 'transparent',
         width: Dimensions.get("window").width,
         height: 450,
