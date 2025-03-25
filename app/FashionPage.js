@@ -4,59 +4,62 @@ import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
 import { useRef } from "react";
+import { VideoView, useVideoPlayer } from 'expo-video'
 
 export default function FashionPage() {
     //const VideoPlayer = () => {
-        //const videoRef = useRef<VideoRef>(null);
-        //const background = require()
-        return (
-            <View style={styles.fullBg}>
-                <PageHeader />
-                <ScrollView style={styles.scrollviewStyle}>
-                    <View style={styles.secondBg}>
-                        <View style={styles.box}>
-                            <View style={styles.horizAlign}>
-                                <View style={styles.profileBox}>
-                                    <Image style={styles.imageParent} source={require('../assets/icon.png')} />
-                                </View>
-                                <View style={styles.HeaderParent}>
-                                    <Header>FASHION</Header>
-                                </View>
-
+    //const videoRef = useRef<VideoRef>(null);
+    //const background = require()
+    return (
+        <View style={styles.fullBg}>
+            <PageHeader />
+            <ScrollView style={styles.scrollviewStyle}>
+                <View style={styles.secondBg}>
+                    <View style={styles.box}>
+                        <View style={styles.horizAlign}>
+                            <View style={styles.profileBox}>
+                                <Image style={styles.imageParent} source={require('../assets/icon.png')} />
                             </View>
-                        </View>
-
-
-                        <View style={styles.box2}>
-                            <View style={styles.horizAlign}>
-                                <View style={styles.HeaderParent2}>
-                                    <Header>This class is a class about fashion!</Header>
-                                </View>
+                            <View style={styles.HeaderParent}>
+                                <Header>FASHION</Header>
                             </View>
-                            <View style={styles.horizAlign}>
-                                <View style={styles.HeaderParent2}>
-                                    <Header>Skibidi toilet </Header>
-                                </View>
-                            </View>
+
                         </View>
-
-                        <View style={styles.imageBox}>
-                            <Image style={styles.imageStyle} source={require('../assets/Fashion Bag Pic 1.jpg')} />
-
-                            <Image style={styles.imageStyle2} source={require('../assets/Fashion Bag Pic 2.jpg')} />
-                        </View>
-
-                        <View style={styles.imageBox}>
-                        
-                        </View>
-
                     </View>
 
 
+                    <View style={styles.box2}>
+                        <View style={styles.horizAlign}>
+                            <View style={styles.HeaderParent2}>
+                                <Header>This class is a class about fashion!</Header>
+                            </View>
+                        </View>
+                        <View style={styles.horizAlign}>
+                            <View style={styles.HeaderParent2}>
+                                <Header>Skibidi toilet </Header>
+                            </View>
+                        </View>
+                    </View>
 
-                </ScrollView>
-            </View>
-        );
+                    <View style={styles.imageBox}>
+                        <Image style={styles.imageStyle} source={require('../assets/Fashion Bag Pic 1.jpg')} />
+
+                        <Image style={styles.imageStyle2} source={require('../assets/Fashion Bag Pic 2.jpg')} />
+                    </View>
+
+                    <View style={styles.imageBox}>
+                        <Image style={styles.imageStyle} source={require('../assets/Fashion Bag Pic 1.jpg')} />
+
+                        <Image style={styles.imageStyle2} source={require('../assets/Fashion Bag Pic 2.jpg')} />
+                    </View>
+
+                </View>
+
+
+
+            </ScrollView>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
