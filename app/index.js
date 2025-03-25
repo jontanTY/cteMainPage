@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
 
     },
-    
     headerContainer: {
         height: 120,
         flexDirection: 'row',
