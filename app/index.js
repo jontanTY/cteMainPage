@@ -21,7 +21,7 @@ export default function MainPage() {
 
         if (scrollY < 610) {
             setBackgroundImage(require('../assets/mohsPAC.jpg'));
-        } else if (scrollY >= 610 && scrollY < 1500) {
+        } else if (scrollY >= 610 && scrollY < 3000) {
             setBackgroundImage(require('../assets/MeneMart-DECA.png'));
         } else {
             setBackgroundImage(require('../assets/mohsPAC.jpg'));
@@ -37,21 +37,36 @@ export default function MainPage() {
 
                 <PageHeader />
 
+                <ScrollView style={styles.container} onScroll={handleScroll} scrollEventThrottle={16}>
+                    <View style={styles.scrollCointainer}>
+                        <View style={styles.headerContainer}>
 
-                <ScrollView style={styles.container} onScroll={handleScroll} scrollEventThrottle={16}
-                >
-                    <View style={styles.headerContainer}>
+                            <Image
+                                style={styles.imageStyle}
+                                source={require('../assets/moanaluaIcon.png')}
+                            />
+                            <Header> CTE </Header>
+                        </View>
+                        <Calendar style={styles.calendarContainer}> {events} </Calendar>
+                        <View style={styles.infoBackground}>
 
-                        <Image
-                            style={styles.imageStyle}
-                            source={require('../assets/moanaluaIcon.png')}
-                        />
-                        <Header> CTE </Header>
-                    </View>
-                    <Calendar style={styles.calendarContainer}> {events} </Calendar>
-                    <View style={styles.placeholderStyle}>
-                    </View>
-                    <View style={styles.placeholderStyle1}>
+                        </View>
+                        <View style={styles.placeholderStyle}>
+                        </View>
+                        <ImageBackground
+                            style={styles.infoBackground}
+                            source={require('../assets/mohsPAC.jpg')}
+                        >
+                            <View style={styles.darkenBackground}>
+                                <Text style={styles.sponsorTitle}> CTE Alumni </Text>
+                                <Image
+                                    style={styles.image}
+                                    source={require('../assets/user.png')}
+                                />
+                                <Text style={styles.sponsorText}> John Doe </Text>
+                                <Text style={styles.sponsorText}> "Exploring the endless possibilities of technology, we uncover new ways to innovate, connect, and create. The journey is as important as the destination, and every step forward brings us closer to a brighter future." </Text>
+                            </View>
+                        </ImageBackground>
                     </View>
                 </ScrollView>
             </ImageBackground>
@@ -65,6 +80,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'transparent',
 
+
+    },
+
+    scrollCointainer: {
+        flex: 1,
+        position: 'absolute',
+        overflow: 'hidden',
     },
 
     headerContainer: {
@@ -117,27 +139,54 @@ const styles = StyleSheet.create({
         height: Dimensions.get("window").height, //for full screen
     },
 
-    backgroundImageStyle1: {
-        alignSelf: 'center',
-        opacity: '78%',
-        position: 'absolute',
-        top: 500,
-        width: Dimensions.get("window").width, //for full screen
-        height: Dimensions.get("window").height, //for full screen
+    image: {
+        marginTop: 40,
+        marginBottom: 20,
+        backgroundSize: 'cover',
+        width: 300,
+        height: 300,
     },
 
+    studentName: {
+        fontSize: 20,
+        color: 'white',
+        marginTop: 10,
+        marginBottom: 10,
+    },
 
     placeholderStyle: {
-        backgroundColor: 'white',
-        width: Dimensions.get("window").width,
-        height: 650,
-        marginTop: 150,
-    },
-
-    placeholderStyle1: {
         backgroundColor: 'transparent',
         width: Dimensions.get("window").width,
         height: 450,
         marginTop: 150,
     },
+
+    infoBackground: {
+        backgroundColor: 'white',
+        width: Dimensions.get("window").width,
+        height: 650,
+        marginTop: 150,
+        overflow: 'hidden',
+    },
+
+    darkenBackground: {
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        flex: 1,
+        width: Dimensions.get("window").width,
+        alignItems: 'center',
+    },
+    sponsorTitle: {
+        color: 'white',
+        fontSize: 40,
+        marginTop: 20,
+        textAlign: 'center',
+    },
+
+    sponsorText: {
+        marginBottom: 20,
+        color: 'white',
+        fontSize: 20,
+        maxWidth: 900,
+        textAlign: 'center',
+    }
 });
