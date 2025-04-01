@@ -10,6 +10,7 @@ export default function FashionPage() {
     //const VideoPlayer = () => {
     //const videoRef = useRef<VideoRef>(null);
     //const background = require()
+    const player = useVideoPlayer(require('../assets/video_06.mp4'), player => { player.play() });
     return (
         <View style={styles.fullBg}>
             <PageHeader />
@@ -48,7 +49,7 @@ export default function FashionPage() {
                     </View>
 
                     <View style={styles.imageBox}>
-                        <Image style={styles.imageStyle} source={require('../assets/Fashion Bag Pic 1.jpg')} />
+                        <VideoView style={styles.videoStyle1} player={player} />
 
                         <Image style={styles.imageStyle2} source={require('../assets/Fashion Bag Pic 2.jpg')} />
                     </View>
@@ -154,6 +155,16 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'right',
     },
+
+    videoStyle1: {
+        flexDirection: 'row',
+        alignItems: 'left',
+        width: 480,
+        height: 480,
+        justifyContent: 'space-between',
+        borderWidth: 23,
+        borderColor: 'black',       
+    }
 
 
 });
