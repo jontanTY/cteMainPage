@@ -63,7 +63,7 @@ export default function PageHeader() {
 
   return (
     <View style={styles.searchContainer}>
-      <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey', }}>
+      <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey'}}>
         <MultiSelect
           style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
           placeholderStyle={{ color: 'grey' }}
