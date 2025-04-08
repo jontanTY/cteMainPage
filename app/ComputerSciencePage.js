@@ -12,10 +12,10 @@ export default function ComputerSciencePage() {
                     <View style={styles.box}>
                         <View style={styles.horizAlign}>
                             <View style={styles.profileBox}>
-                                <Image style={styles.imageParent} source={require('../assets/personIcon.png')} />
+                                <Image style={styles.imageParent} source={require('../assets/csIcon.png')} />
                             </View>
                             <View style={styles.HeaderParent}>
-                                <Header>Computer Science</Header>
+                                <text style={styles.normalText}>Computer Science</text>
                             </View>
 
                         </View>
@@ -24,10 +24,12 @@ export default function ComputerSciencePage() {
 
                     <View style={styles.box2}>
                         <View style={styles.horizAlign}>
-                            <View style={styles.HeaderParent2}>
-                                <Header>Class Info Here</Header>
+                                <Text style={styles.normalText2}>Teachers: Mr. Takahashi, Mr. Ishikawa, Mr. Park</Text> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Takahashi-Photo.jpg')} /> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Ishikawa-Photo.jpg')} /> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Takahashi-Photo.jpg')} />
                             </View>
-                        </View>
+                            <Text style={styles.abnormalText}>The Automotive Class teaches students about the maintenance and general upkeep of motor vehicles. Students will learn how to take care of cars to be better prepared for the everyday wear-and-tear of their vehicles.</Text>
+                            <Text>Courses:      Foundations of Auto Maintenance and Light Repair (9,10,11,12) (1 year),</Text>
+                            <Text>Auto Maintenance and Light Repair 1 (10,11,12) (1 year),</Text>
+                            <Text>Auto Maintenance and Light Repair 2 (11,12) (1 year)</Text>
                     </View>
 
                     <View style={styles.placeholder}>
@@ -69,24 +71,23 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
     imageParent: {
-        height: 150,
-        width: 150,
+        height: 135,
+        width: 135,
     },
     horizAlign: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     HeaderParent:
     {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingLeft: 20
+        paddingLeft: 90
     },
     HeaderParent2:
     {
         alignItems: 'center',
         justifyContent: 'center',
     },
-
     scrollviewStyle: {
         flexGrow: 1,
         width: '100%'
@@ -100,6 +101,24 @@ const styles = StyleSheet.create({
         marginTop: 150,
         marginBottom: 25,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'top'
     },
+    normalText: {
+        fontSize: 48,
+        marginTop: 56
+    },
+    normalText2: {
+        fontSize: 48,
+        marginTop: 6,
+        marginLeft: 16
+    },
+    abnormalText: {
+        fontSize: 32,
+        marginTop: 16,
+        marginLeft: 24
+    },
+    imageParent2: {
+        marginTop: 12,
+        marginRight: 10
+    }
 });

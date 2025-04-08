@@ -12,7 +12,7 @@ export default function AutomotivePage() {
                     <View style={styles.box}>
                         <View style={styles.horizAlign}>
                             <View style={styles.profileBox}>
-                                <Image style={styles.imageParent} source={require('../assets/personIcon.png')} />
+                                <Image style={styles.imageParent} source={require('../assets/carIcon.png')} />
                             </View>
                             <View style={styles.HeaderParent}>
                                 <Header>Automotive</Header>
@@ -24,10 +24,12 @@ export default function AutomotivePage() {
 
                     <View style={styles.box2}>
                         <View style={styles.horizAlign}>
-                            <View style={styles.HeaderParent2}>
-                                <Header>Class Info Here</Header>
-                            </View>
+                                <Text style={styles.normalText}>Teacher: Mr. Andersson</Text> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Andersson-Photo.jpg')} />
                         </View>
+                            <Text style={styles.abnormalText}>The Automotive Class teaches students about the maintenance and general upkeep of motor vehicles. Students will learn how to take care of cars to be better prepared for the everyday wear-and-tear of their vehicles.</Text>
+                            <Text>Courses:      Foundations of Auto Maintenance and Light Repair (9,10,11,12) (1 year),</Text>
+                            <Text>Auto Maintenance and Light Repair 1 (10,11,12) (1 year),</Text>
+                            <Text>Auto Maintenance and Light Repair 2 (11,12) (1 year)</Text>
                     </View>
 
                     <View style={styles.placeholder}>
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
     {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingLeft: 60
+        paddingLeft: 90
     },
     HeaderParent2:
     {
@@ -100,8 +102,20 @@ const styles = StyleSheet.create({
         marginTop: 150,
         marginBottom: 25,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'top'
     },
-
+    normalText: {
+        fontSize: 48,
+        marginTop: 56
+    },
+    abnormalText: {
+        fontSize: 32,
+        marginTop: 16,
+        marginLeft: 24
+    },
+    imageParent2: {
+        marginTop: 12,
+        marginLeft: 256
+    }
 
 });
