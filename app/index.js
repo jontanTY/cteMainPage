@@ -3,9 +3,28 @@ import { StatusBar } from 'expo-status-bar';
 import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { VideoView, useVideoPlayer } from 'expo-video';
 
+import {
+    useFonts,
+    BeVietnam_100Thin,
+    BeVietnam_100Thin_Italic,
+    BeVietnam_300Light,
+    BeVietnam_300Light_Italic,
+    BeVietnam_400Regular,
+    BeVietnam_400Regular_Italic,
+    BeVietnam_500Medium,
+    BeVietnam_500Medium_Italic,
+    BeVietnam_600SemiBold,
+    BeVietnam_600SemiBold_Italic,
+    BeVietnam_700Bold,
+    BeVietnam_700Bold_Italic,
+    BeVietnam_800ExtraBold,
+    BeVietnam_800ExtraBold_Italic,
+} from '@expo-google-fonts/be-vietnam';
+
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
 import PageHeader from '../components/PageHeader';
+import Fonts from '../constants/fonts';
 
 const events = [
     { id: 1, name: "event1", month: 1, date: 5 },
@@ -17,6 +36,22 @@ const events = [
 export default function MainPage() {
     const [backgroundImage, setBackgroundImage] = useState(require('../assets/mohsPAC.jpg'));
     const player = useVideoPlayer(require('../assets/intro.mp4'), player => { player.play() });
+    let [fontsLoaded] = useFonts({
+        BeVietnam_100Thin,
+        BeVietnam_100Thin_Italic,
+        BeVietnam_300Light,
+        BeVietnam_300Light_Italic,
+        BeVietnam_400Regular,
+        BeVietnam_400Regular_Italic,
+        BeVietnam_500Medium,
+        BeVietnam_500Medium_Italic,
+        BeVietnam_600SemiBold,
+        BeVietnam_600SemiBold_Italic,
+        BeVietnam_700Bold,
+        BeVietnam_700Bold_Italic,
+        BeVietnam_800ExtraBold,
+        BeVietnam_800ExtraBold_Italic,
+    });
 
     const handleScroll = (event) => {
         const scrollY = event.nativeEvent.contentOffset.y;
@@ -156,9 +191,9 @@ const styles = StyleSheet.create({
     videoText: {
         textAlign: 'center',
         fontSize: 40,
-        fontWeight: 'bold',
         marginBottom: 15,
         marginTop: 25,
+        fontFamily: Fonts.font500,
     },
 
     video: {
@@ -205,6 +240,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         marginTop: 20,
         textAlign: 'center',
+        fontFamily: Fonts.font300,
     },
 
     sponsorText: {
@@ -213,6 +249,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         maxWidth: 900,
         textAlign: 'center',
+        fontFamily: Fonts.font100,
     },
 
     socialContainer: {
@@ -227,5 +264,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         textAlign: 'center',
+        fontFamily: Fonts.font300,
     }
 });
