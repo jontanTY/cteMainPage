@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { VideoView, useVideoPlayer } from 'expo-video';
 
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
@@ -15,6 +16,7 @@ const events = [
 
 export default function MainPage() {
     const [backgroundImage, setBackgroundImage] = useState(require('../assets/mohsPAC.jpg'));
+    const player = useVideoPlayer(require('../assets/intro.mp4'), player => { player.play() });
 
     const handleScroll = (event) => {
         const scrollY = event.nativeEvent.contentOffset.y;
@@ -29,7 +31,9 @@ export default function MainPage() {
     };
 
     return (
+
         <View style={styles.container}>
+
             <ImageBackground
                 style={styles.backgroundImageStyle}
                 source={backgroundImage}
@@ -47,40 +51,41 @@ export default function MainPage() {
                             />
                             <Header> CTE </Header>
                         </View>
-                        <Calendar style={styles.calendarContainer}> {events} </Calendar>
+                        <Calendar> {events} </Calendar>
                         <View style={styles.infoBackground}>
-
+                            <Text style={styles.videoText}> CTE Introduction </Text>
+                            <VideoView style={styles.video} player={player} />
                         </View>
-                        <View style={styles.placeholderStyle}>
-                        </View>
+                        <View style={styles.placeholderStyle} />
                         <ImageBackground
                             style={styles.infoBackground}
-                            source={require('../assets/mohsPAC.jpg')}
+                            source={require('../assets/studentSpotBackground.jpg')}
                         >
                             <View style={styles.darkenBackground}>
                                 <Text style={styles.sponsorTitle}> CTE Alumni </Text>
                                 <Image
                                     style={styles.image}
-                                    source={require('../assets/user.png')}
+                                    source={require('../assets/student.jpg')}
                                 />
-                                <Text style={styles.sponsorText}> John Doe </Text>
+                                <Text style={styles.sponsorText}> Rawli Kole Ringor </Text>
                                 <Text style={styles.sponsorText}> "Exploring the endless possibilities of technology, we uncover new ways to innovate, connect, and create. The journey is as important as the destination, and every step forward brings us closer to a brighter future." </Text>
                             </View>
                         </ImageBackground>
+                        <View style={styles.socialContainer}>
+                            <Text style={styles.socialText}> Contact Us </Text>
+                        </View>
                     </View>
                 </ScrollView>
             </ImageBackground>
 
-        </View>
+        </View >
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'transparent',
-
-
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
     },
 
     scrollCointainer: {
@@ -135,8 +140,8 @@ const styles = StyleSheet.create({
         opacity: '78%',
         top: 0,
         left: 0,
-        width: Dimensions.get("window").width, //for full screen
-        height: Dimensions.get("window").height, //for full screen
+        width: Dimensions.get("window").width,
+        height: Dimensions.get("window").height,
     },
 
     image: {
@@ -145,6 +150,23 @@ const styles = StyleSheet.create({
         backgroundSize: 'cover',
         width: 300,
         height: 300,
+        borderRadius: 1000 / 2,
+    },
+
+    videoText: {
+        textAlign: 'center',
+        fontSize: 40,
+        fontWeight: 'bold',
+        marginBottom: 15,
+        marginTop: 25,
+    },
+
+    video: {
+        margin: 15,
+        width: 831.25,
+        height: 475,
+        alignSelf: 'center',
+        borderRadius: 20,
     },
 
     studentName: {
@@ -157,8 +179,8 @@ const styles = StyleSheet.create({
     placeholderStyle: {
         backgroundColor: 'transparent',
         width: Dimensions.get("window").width,
-        height: 450,
-        marginTop: 150,
+        height: 600,
+        overflow: 'hidden',
     },
 
     infoBackground: {
@@ -167,6 +189,8 @@ const styles = StyleSheet.create({
         height: 650,
         marginTop: 150,
         overflow: 'hidden',
+        top: 0,
+        left: 0,
     },
 
     darkenBackground: {
@@ -175,6 +199,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get("window").width,
         alignItems: 'center',
     },
+
     sponsorTitle: {
         color: 'white',
         fontSize: 40,
@@ -187,6 +212,20 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 20,
         maxWidth: 900,
+        textAlign: 'center',
+    },
+
+    socialContainer: {
+        backgroundColor: 'white',
+        height: 500,
+        width: Dimensions.get("window").width,
+    },
+
+    socialText: {
+        fontSize: 30,
+        color: 'black',
+        marginTop: 10,
+        marginBottom: 10,
         textAlign: 'center',
     }
 });
