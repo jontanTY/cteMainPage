@@ -37,6 +37,14 @@ const teachers = [
   { label: 'Mr. Zavala', value: '14', href: 'MediaPage' },
 ];
 
+const clubs = [
+  { label: 'Development Team (Coding Club)', value: '1', href: 'AutomotivePage' },
+  { label: 'HOSA', value: '2', href: 'AutomotivePage' },
+  { label: 'DECA', value: '3', href: 'AutomotivePage' },
+  { label: 'Robotics', value: '4', href: 'AutomotivePage' },
+  { label: 'FCCLA', value: '5', href: 'AutomotivePage' },
+];
+
 export default function PageHeader() {
   const [input, setInput] = useState("");
   const [selected, setSelected] = useState([]);
@@ -54,16 +62,21 @@ export default function PageHeader() {
     { label: 'Media (MeneMac)', value: '10' },
     { label: 'People', value: '11' },
     { label: 'Events', value: '12' },
+    { label: 'Dev Team', value: '13' },
+    { label: 'HOSA', value: '14' },
+    { label: 'DECA', value: '15' },
+    { label: 'Robotics', value: '16' },
+    { label: 'FCCLA', value: '17' },
   ];
 
-  function handleResultPage(){
+  function handleResultPage() {
     console.log("lol");
-    navigation.navigate("resultsPage", {input: input});
+    navigation.navigate("resultsPage", { input: input });
   }
 
   return (
     <View style={styles.searchContainer}>
-      <View style={{ marginRight: 50, borderWidth: 0, borderColor: 'grey'}}>
+      <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
         <MultiSelect
           style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
           placeholderStyle={{ color: 'grey' }}
@@ -94,17 +107,23 @@ export default function PageHeader() {
         //selectedStyle={styles.selectedStyle}
         />
       </View>
-      
-      <TextInput
-        style={styles.textInputStyle}
-        onChangeText={setInput}
-        value={input}
-        onSubmitEditing={handleResultPage}
-      />
-      <Text style={styles.searchStyle}> Search </Text>
+      <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
+        <TextInput
+          style={styles.textInputStyle}
+          onChangeText={setInput}
+          value={input}
+          onSubmitEditing={handleResultPage}
+        />
+        <Text style={styles.searchStyle}> Search </Text>
 
-      <DropdownComponent arrData={departments}> Departments </DropdownComponent>
-      <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
+        <View style={{ flexDirection: 'row', marginTop: 2 }}>
+          <DropdownComponent arrData={departments}> Departments </DropdownComponent>
+          <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
+          <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
+        </View>
+
+      </View>
+
       <View style={styles.leftAlign}>
         <Image
           style={styles.imageStyle}
@@ -129,15 +148,14 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   textInputStyle: {
-    marginLeft: -10,
+    marginLeft: -0,
     marginRight: 20,
     borderWidth: 2,
     borderColor: 'grey',
     width: 100,
+    height: 20,
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignContent: 'center',
+    marginTop: 18,
     borderRadius: 5,
     //flex: 1,
   },

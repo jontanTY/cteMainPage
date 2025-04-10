@@ -15,15 +15,15 @@ export default function EngineeringPage() {
                         <Link style={{ color: 'white' }} href='/'>Go back home</Link>
                     </View>
                     <View style={styles.videoTopStyle}>
-                        <Image style={{ width: 300, height: 300, marginRight: 100 }} source={require('../assets/favicon.png')} />
-                        <View style={{ borderRadius: 50 }}>
-                            <VideoView style={{ width: 500, height: 500, borderRadius: 5, }} player={player} />
+                        <Image style={{ width: 300, height: 300, marginRight: 100 }} source={require('../assets/wrench2.png')} />
+                        <View style={{ borderRadius: 5, borderWidth: 5, background: 'gold', borderColor: 'darkslategrey ', }}>
+                            <VideoView style={{ width: 500, height: 250, borderRadius: 5, }} player={player} />
                         </View>
                         <Image style={{ width: 300, height: 300, marginLeft: 100 }} source={require('../assets/favicon.png')} />
                     </View>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 100 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 100, background: 'gold', padding: 20, borderRadius: 50 }}>
                     <View >
                         <View style={{ alignItems: 'left', }}>
                             <Text style={{ alignItems: 'left', fontSize: 20 }}>Foundations (Year 1)</Text>
@@ -93,7 +93,7 @@ export default function EngineeringPage() {
                     </View>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 200 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 150, background: 'gold', padding: 20, borderRadius: 50  }}>
                     <View style={{ marginLeft: 0 }}>
                         <View>
                             <Text style={{ fontSize: 20 }}>Tech 2 (Year 3)</Text>
@@ -158,12 +158,12 @@ export default function EngineeringPage() {
                     </View>
                 </View>
 
-                <View style={{ marginTop: 100, marginLeft: 100, flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                    <View>
+                <View style={{ marginTop: 100, flexDirection: 'row', justifyContent: 'space-evenly', background: 'gold', padding: 20, borderRadius: 50 }}>
+                    <View style={{marginLeft: 100}}>
                         <Text style={{ fontSize: 40 }} >Focus: </Text>
                         <Text style={{ fontSize: 20, marginLeft: 70 }} >3D Modeling </Text>
                         <Text style={{ fontSize: 20, marginLeft: 70 }} >3D Printing </Text>
-                    </View>
+                    </View> 
                     <View>
                         <View style={{ flexDirection: 'row' }}>
                             <Text style={{ fontSize: 20, marginLeft: 70 }} >6 Lulz Bot 3D Printers </Text>
@@ -194,7 +194,7 @@ export default function EngineeringPage() {
 
 const styles = StyleSheet.create({
     videoTopStyle: {
-        alignContent: 'center', alignItems: 'center', justifyContent: 'center', flex: 1, flexDirection: 'row',
+        alignContent: 'center', alignItems: 'center', justifyContent: 'center', flex: 1, flexDirection: 'row', marginTop: 50
     },
     infoStyle: {
         marginTop: 10, marginLeft: 10
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
         width: 100, height: 100, marginLeft: 20
     },
     headerStyle: {
-        backgroundColor: 'navy', alignItems: 'center', justifyContent: 'center', width: '100%', padding: 30, borderLeftWidth: 10, borderLeftColor: "black",
-        borderRightWidth: 10, borderRightColor: "black", borderTopWidth: 10, borderTopColor: "black", borderBottomWidth: 10, borderBottomColor: "black",
+        backgroundColor: 'navy', alignItems: 'center', justifyContent: 'center', width: '100%', padding: 30, borderLeftWidth: 0, borderLeftColor: "black",
+        borderRightWidth: 0, borderRightColor: "black", borderTopWidth: 10, borderTopColor: "black", borderBottomWidth: 10, borderBottomColor: "black",
     },
 });
