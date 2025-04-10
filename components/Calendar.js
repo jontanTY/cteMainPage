@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-web";
 import Event from "./Event";
 
 const events = [
-    { id: 1, name: "Fat people Appreciation day", month: 'January', date: 5},
+    { id: 1, name: "event1", month: 'January', date: 5},
     { id: 2, name: "event2", month: 'March', date: 10},
     { id: 3, name: "event3", month: 'July', date: 2},
     { id: 4, name: "event4", month: 'November', date: 7},
