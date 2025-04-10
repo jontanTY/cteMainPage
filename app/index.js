@@ -113,7 +113,7 @@ export default function MainPage() {
                 </ScrollView>
             </ImageBackground>
 
-        </View >
+        </View>
     );
 }
 
