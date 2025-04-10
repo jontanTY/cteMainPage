@@ -4,7 +4,7 @@ import { VideoView, useVideoPlayer } from "expo-video"
 import PageHeader from "../components/PageHeader";
 
 export default function EngineeringPage() {
-    const player = useVideoPlayer(require('../assets/What is Engineering.mp4'), player => { player.play() });
+    const player = useVideoPlayer(require('../assets/EngineeringImg/What is Engineering.mp4'), player => { player.play() });
     return (
         <>
             <PageHeader />
@@ -12,14 +12,13 @@ export default function EngineeringPage() {
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
                     <View style={styles.headerStyle}>
                         <Text style={{ fontSize: 50, marginTop: 0, color: 'white' }}>CTE Engineering Pathway</Text>
-                        <Link style={{ color: 'white' }} href='/'>Go back home</Link>
                     </View>
                     <View style={styles.videoTopStyle}>
-                        <Image style={{ width: 300, height: 300, marginRight: 100 }} source={require('../assets/wrench2.png')} />
-                        <View style={{ borderRadius: 5, borderWidth: 5, background: 'gold', borderColor: 'darkslategrey ', }}>
+                        <Image style={{ width: 300, height: 300, marginRight: 100 }} source={require('../assets/EngineeringImg/wrenchparent.png')} />
+                        <View style={{ borderRadius: 10, borderWidth: 5, background: 'gold', borderColor: 'darkslategrey ', }}>
                             <VideoView style={{ width: 500, height: 250, borderRadius: 5, }} player={player} />
                         </View>
-                        <Image style={{ width: 300, height: 300, marginLeft: 100 }} source={require('../assets/favicon.png')} />
+                        <Image style={{ width: 300, height: 300, marginLeft: 100 }} source={require('../assets/EngineeringImg/gearsparent.png')} />
                     </View>
                 </View>
 
@@ -203,7 +202,7 @@ const styles = StyleSheet.create({
         width: 100, height: 100, marginLeft: 20
     },
     headerStyle: {
-        backgroundColor: 'navy', alignItems: 'center', justifyContent: 'center', width: '100%', padding: 30, borderLeftWidth: 0, borderLeftColor: "black",
-        borderRightWidth: 0, borderRightColor: "black", borderTopWidth: 10, borderTopColor: "black", borderBottomWidth: 10, borderBottomColor: "black",
+        backgroundColor: 'navy', alignItems: 'center', justifyContent: 'center', width: '100%', padding: 30, borderLeftWidth: 200, borderLeftColor: "teal",
+        borderRightWidth: 200, borderRightColor: "teal", borderTopWidth: 10, borderTopColor: "black", borderBottomWidth: 10, borderBottomColor: "black",
     },
 });

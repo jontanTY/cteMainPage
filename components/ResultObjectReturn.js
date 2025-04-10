@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Text, Pressable, View, StyleSheet } from "react-native-web";
+import { Text, Pressable, View, StyleSheet, Image } from "react-native-web";
 import * as Linking from 'expo-linking';
 
 export default function ResultObjectReturn(props) {
@@ -41,6 +41,7 @@ export default function ResultObjectReturn(props) {
                     <Text style={styles.titleStyle}></Text>
                 </View>
                 <Text>{props.description}</Text>
+                <Image source={require('../assets/favicon.png')}/>
             </View>
         </View>
     );

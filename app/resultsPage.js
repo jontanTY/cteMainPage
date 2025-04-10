@@ -1,4 +1,4 @@
-import { FlatList, View, Text } from "react-native-web";
+import { FlatList, View, Text, Image } from "react-native-web";
 import { useEffect, useState } from "react";
 import ResultObjectReturn from "../components/ResultObjectReturn";
 import PageHeader from "../components/PageHeader";
@@ -30,6 +30,7 @@ export default function resultsPage(props) {
                     data={list}
                     renderItem={(itemData) => {
                         return (
+                            
                             <ResultObjectReturn
                                 description={itemData.item.description}
                                 titleText={itemData.item.title}
