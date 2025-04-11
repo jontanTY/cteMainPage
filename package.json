@@ -9,15 +9,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/be-vietnam": "^0.2.0",
     "@expo/metro-runtime": "~4.0.0",
     "expo": "~52.0.19",
     "expo-app-loading": "^2.1.1",
     "expo-constants": "~17.0.5",
     "expo-cli": "^6.3.10",
-    "expo-font": "~13.0.1",
+    "expo-font": "~13.0.4",
     "expo-linking": "~7.0.5",
     "expo-router": "~4.0.17",
     "expo-status-bar": "~2.0.1",
+    "expo-video": "~2.0.6",
     "git-cli": "^0.11.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

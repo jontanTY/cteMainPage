@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-web";
+import Event from "./Event";
 
 const events = [
-    { id: 1, name: "Fat people Appreciation day", month: 'January', date: 5 },
-    { id: 2, name: "event2", month: 'March', date: 10 },
-    { id: 3, name: "event3", month: 'July', date: 2 },
-    { id: 4, name: "event4", month: 'November', date: 7 },
+    { id: 1, name: "event1", month: 'January', date: 5},
+    { id: 2, name: "event2", month: 'March', date: 10},
+    { id: 3, name: "event3", month: 'July', date: 2},
+    { id: 4, name: "event4", month: 'November', date: 7},
+
 ];
 
 export default function Calendar() {
@@ -15,7 +17,15 @@ export default function Calendar() {
                 <FlatList
                     horizontal={true}
                     data={events}
-                    renderItem={({ item }) => <Text style={styles.eventsContainer}>{item.name} {item.month} {item.date} </Text>}
+                    renderItem={({ item }) =>
+                        <View>
+                            <Event
+                                name={item.name}
+                                month={item.month}
+                                date={item.date}
+                            />
+                        </View>
+                    }
                     keyExtractor={(item) => item.id}
                 />
             </SafeAreaView>
@@ -27,10 +37,9 @@ export default function Calendar() {
 const styles = StyleSheet.create({
     calenderContainer: {
         height: 200,
-        marginTop: 100,
-        backgroundColor: 'black',
-        opacity: '50%',
-        marginLeft: 25,
+        marginTop: 75,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        marginRight: 200,
     },
 
     container: {
@@ -42,5 +51,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         color: 'white',
+        fontSize: 16,
     },
 });
