@@ -12,7 +12,6 @@ export default function themScreensTemplate() {
                     <View style={styles.box}>
                         <View style={styles.horizAlign}>
                             <View style={styles.profileBox}>
-                                <Image style={styles.imageParent} source={require('../assets/personIcon.png')} />
                             </View>
                             <View style={styles.HeaderParent}>
                                 <Header>Example Class</Header>
