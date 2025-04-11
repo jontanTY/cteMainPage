@@ -18,22 +18,20 @@ export default function AboutUsPage() {
             </View>
             <ScrollView style={styles.bottomContainer}>
                 <Text style = {styles.textStyle}>
-                    SAMPLE SAMPLE SAMPLE
-                    SAMPLE SAMPLE SAMPLE
-                    Lorem ipsum dolor sit amet, consectetur a labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Welcome to the Moanalua High School CTE Department website! 
+                    This website as a project for the advanced computer science students in 
+                    order to demonstrate the different pathways, people, and details of the CTE department. 
+                    The courses offered in CTE are a place where students can learn about different career pathways and gain valuable skills that will help them in their future careers.
+                    The CTE department offers a variety of courses in different fields, including culinary arts, business, and technology, healthcare, and many more.
                 </Text>
 
                 <Text style = {styles.textStyle}>
-                    SAMPLE SAMPLE SAMPLE
-                    SAMPLE SAMPLE SAMPLE
-                    Lorem ipsum dolor sit amet, consectetur a labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    The CTE department is dedicated to providing students with hands-on learning experiences that will prepare them for the workforce. 
+                    Education should be relevant and engaging, and we strive to create a positive learning environment for all students.
+                    Students are encouraged to take advantage of the multitude of opportunities available in the CTE department, and we look forward to helping them achieve their goals.
+                    Whether it be internships, club competitions, job-shadowing, volunteering, and much more, the CTE department is here to help students succeed.
                 </Text>
 
-                <Text style = {styles.textStyle}>
-                    SAMPLE SAMPLE SAMPLE
-                    SAMPLE SAMPLE SAMPLE
-                    Lorem ipsum dolor sit amet, consectetur a labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </Text>
                 <View>
                 <Image
                     style={styles.backgroundImageStyle}

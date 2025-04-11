@@ -12,7 +12,8 @@ export default function PageTemplate(props) {
                     <View style={styles.box}>
                         <View style={styles.horizAlign}>
                             <View style={styles.profileBox}>
-                                <Image style={styles.imageParent} source={require('../assets/personIcon.png')} />
+                                
+                                <Image style={styles.imageParent} source={props.image} />
                             </View>
                             <View style={styles.HeaderParent}>
                                 <Header>{props.class}</Header>
@@ -104,8 +105,7 @@ const styles = StyleSheet.create({
         marginTop: 150,
         marginBottom: 25,
         alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
+        justifyContent: 'top',
     },
 
 
