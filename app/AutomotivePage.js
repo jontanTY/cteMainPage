@@ -7,5 +7,7 @@ export default function AutomotivePage() {
             <Text>Automotive Page</Text>
             <Link href='/'>Go back home</Link>
         </View>
+
+
     )
 }

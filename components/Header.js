@@ -8,7 +8,13 @@ export default function Header({ children }) {
 }
 
 const styles = StyleSheet.create({
-    headerStyle: {
+    headerStyle:{
         fontSize: 55,
+        marginLeft: -10,
+        marginRight: 400,
+        alignItems: 'center',
+        textAlign:'center',
+        justifyContent: 'center',
+        alignContent: 'center',
     },
 });

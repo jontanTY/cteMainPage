@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from "react-native-web";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native-web";
 import { Link } from "expo-router";
 import { useState } from "react";
 import MainButton from "./MainButton";
@@ -6,6 +6,7 @@ import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
 import { Linking } from 'react-native';
+import Header from "./Header";
 
 const departments = [
   { label: 'Automotive', value: '1', href: 'AutomotivePage' },
