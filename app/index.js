@@ -35,6 +35,9 @@ const events = [
     { id: 4, name: "event4", month: 11, date: 7 },
 ];
 
+const image1 = require('../assets/mohsPAC.jpg');
+const image2 = require('../assets/MeneMart-DECA.png');
+
 export default function MainPage() {
     const [backgroundImage, setBackgroundImage] = useState(require('../assets/mohsPAC.jpg'));
     const player = useVideoPlayer(require('../assets/intro.mp4'), player => { player.play() });
@@ -59,11 +62,11 @@ export default function MainPage() {
         const scrollY = event.nativeEvent.contentOffset.y;
 
         if (scrollY < 610) {
-            setBackgroundImage(require('../assets/mohsPAC.jpg'));
+            setBackgroundImage(image1);
         } else if (scrollY >= 610 && scrollY < 3000) {
-            setBackgroundImage(require('../assets/MeneMart-DECA.png'));
+            setBackgroundImage(image2);
         } else {
-            setBackgroundImage(require('../assets/mohsPAC.jpg'));
+            setBackgroundImage(image1);
         }
     };
 
@@ -123,7 +126,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         overflow: 'hidden',
     },
-
     headerContainer: {
         height: 120,
         flexDirection: 'row',
