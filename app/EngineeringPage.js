@@ -160,8 +160,7 @@ export default function EngineeringPage() {
                 <View style={{ marginTop: 100, flexDirection: 'row', justifyContent: 'space-evenly', background: 'gold', padding: 20, borderRadius: 50 }}>
                     <View style={{marginLeft: 100}}>
                         <Text style={{ fontSize: 40 }} >Focus: </Text>
-                        <Text style={{ fontSize: 20, marginLeft: 70 }} >3D Modeling </Text>
-                        <Text style={{ fontSize: 20, marginLeft: 70 }} >3D Printing </Text>
+                        <Text style={{ fontSize: 20, marginLeft: 70 }} >3D Modeling/3D Printing</Text>
                     </View> 
                     <View>
                         <View style={{ flexDirection: 'row' }}>
@@ -178,14 +177,6 @@ export default function EngineeringPage() {
                         </View>
                     </View>
                 </View>
-
-                <View>
-                    <View>
-                    
-                    </View>
-                </View>
-
-
             </ScrollView>
         </>
     )
