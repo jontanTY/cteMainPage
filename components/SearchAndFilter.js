@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function SearchAndFilters(props) {
     const [selected, setSelected] = useState([]);
-
+    
     const data = [
         { label: 'Automotive', value: '1' },
         { label: 'Business', value: '2' },
