@@ -4,6 +4,10 @@ import PageTemplate from "../components/PageTemplate";
 
 export default function MediaPage() {
     return (
-        <PageTemplate />
+        <PageTemplate
+            class='Media'
+            info=''
+            image={require('../assets/mediaBackground.jpg')}
+        />
     )
 }

@@ -10,6 +10,7 @@ export default function HealthServicesPage() {
             <PageTemplate
                 class='Health Services'
                 info='Ms. Harada and other teachers teach this class and its about health. :)'
+                image={require('../assets/healthBackground.jpg')}
             />
         </>
     )

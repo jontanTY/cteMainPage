@@ -27,7 +27,7 @@ export default function CulinaryPage() {
                                 </View>
                             </View>
 
-                            <VideoView style={{ width: 400, height: 400 }} player={player} />
+                            <VideoView style={{ width: 400, height: 250 }} player={player} />
 
                             <View style={styles.box2}>
                                 <Header>Mr. Mitsuda, Mrs. Perkins</Header>

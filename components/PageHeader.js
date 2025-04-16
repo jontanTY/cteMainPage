@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button } from "react-native-web";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
 import MainButton from "./MainButton";
@@ -7,6 +7,25 @@ import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
 import { Linking } from 'react-native';
 import Header from "./Header";
+
+
+import {
+  useFonts,
+  BeVietnam_100Thin,
+  BeVietnam_100Thin_Italic,
+  BeVietnam_300Light,
+  BeVietnam_300Light_Italic,
+  BeVietnam_400Regular,
+  BeVietnam_400Regular_Italic,
+  BeVietnam_500Medium,
+  BeVietnam_500Medium_Italic,
+  BeVietnam_600SemiBold,
+  BeVietnam_600SemiBold_Italic,
+  BeVietnam_700Bold,
+  BeVietnam_700Bold_Italic,
+  BeVietnam_800ExtraBold,
+  BeVietnam_800ExtraBold_Italic,
+} from '@expo-google-fonts/be-vietnam-pro';
 
 const departments = [
   { label: 'Automotive', value: '1', href: 'AutomotivePage' },
@@ -46,9 +65,28 @@ const clubs = [
   { label: 'FCCLA', value: '5', href: 'AutomotivePage' },
 ];
 
+
+
 export default function PageHeader() {
   const [input, setInput] = useState("");
   const [selected, setSelected] = useState([]);
+
+  let [fontsLoaded] = useFonts({
+    BeVietnam_100Thin,
+    BeVietnam_100Thin_Italic,
+    BeVietnam_300Light,
+    BeVietnam_300Light_Italic,
+    BeVietnam_400Regular,
+    BeVietnam_400Regular_Italic,
+    BeVietnam_500Medium,
+    BeVietnam_500Medium_Italic,
+    BeVietnam_600SemiBold,
+    BeVietnam_600SemiBold_Italic,
+    BeVietnam_700Bold,
+    BeVietnam_700Bold_Italic,
+    BeVietnam_800ExtraBold,
+    BeVietnam_800ExtraBold_Italic,
+  });
 
   const data = [
     { label: 'Automotive', value: '1' },
@@ -76,6 +114,7 @@ export default function PageHeader() {
   }
 
   return (
+
     <View style={styles.searchContainer}>
       <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
         <MultiSelect
@@ -159,12 +198,15 @@ const styles = StyleSheet.create({
     marginTop: 18,
     borderRadius: 5,
     //flex: 1,
+
   },
+
   searchStyle: {
     color: 'grey',
     marginTop: -5,
     marginRight: 15,
     fontSize: 16,
+    
   },
 
   imageStyle: {
@@ -184,6 +226,6 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 55,
     paddingLeft: 16
-    
+
   }
 });

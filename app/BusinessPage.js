@@ -1,40 +1,39 @@
-import { Text, View, ScrollView, StyleSheet, Image } from "react-native-web";
+import { Text, View, ScrollView, StyleSheet, Image, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
 
 export default function themScreensTemplate() {
     return (
-        <View style={styles.fullBg}>
+        <>
             <PageHeader />
-            <ScrollView style={styles.scrollviewStyle}>
-                <View style={styles.secondBg}>
-                    <View style={styles.box}>
-                        <View style={styles.horizAlign}>
-                            <View style={styles.profileBox}>
+            <ImageBackground style={styles.fullBg}
+                source={require('../assets/businessBackground.png')}
+            >
+                <ScrollView style={styles.scrollviewStyle}>
+                    <View style={styles.secondBg}>
+                        <View style={styles.box}>
+                                <View style={styles.HeaderParent}>
+                                    <Text style={styles.headerText}> Business </Text>
+                                </View>
+                        </View>
+
+
+                        <View style={styles.box2}>
+                            <View style={styles.horizAlign}>
+                                <View style={styles.HeaderParent2}>
+                                    <Text>"Welcome to the Business Program! Our course is designed to equip students with the essential skills and knowledge needed to thrive in the dynamic world of business. From entrepreneurship and marketing to finance and management, this program provides hands-on learning experiences and real-world applications. Whether you're looking to start your own business or pursue a career in the corporate world, our curriculum will help you build a strong foundation for success. Join us and take the first step toward becoming a future business leader!"</Text>
+                                </View>
                             </View>
-                            <View style={styles.HeaderParent}>
-                                <Header>Example Class</Header>
-                            </View>
+                        </View>
+
+                        <View style={styles.placeholder}>
 
                         </View>
                     </View>
-
-
-                    <View style={styles.box2}>
-                        <View style={styles.horizAlign}>
-                            <View style={styles.HeaderParent2}>
-                                <Header>Class Info Here</Header>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.placeholder}>
-
-                    </View>
-                </View>
-            </ScrollView>
-        </View>
+                </ScrollView>
+            </ImageBackground>
+        </>
     );
 }
 
@@ -46,6 +45,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#9de9f5',
         alignItems: 'center',
         justifyContent: 'top',
+    },
+    headerText: {
+        fontSize: 80,
+        color: 'black',
+        marginTop: 20,
+        textAlign: 'center',
     },
     secondBg: {
         flex: 1,
@@ -59,8 +64,7 @@ const styles = StyleSheet.create({
         height: 200,
         width: '50%',
         backgroundColor: 'white',
-        borderColor: 'black',
-        borderWidth: 5,
+        borderRadius: 10,
     },
     profileBox:
     {
@@ -71,19 +75,16 @@ const styles = StyleSheet.create({
         height: 150,
         width: 150,
     },
-    horizAlign: {
-        flexDirection: 'row'
-    },
     HeaderParent:
     {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingLeft: 60
     },
     HeaderParent2:
     {
         alignItems: 'center',
         justifyContent: 'center',
+        padding: 80,
     },
 
     scrollviewStyle: {
@@ -94,12 +95,11 @@ const styles = StyleSheet.create({
         height: 450,
         width: '75%',
         backgroundColor: 'white',
-        borderColor: 'black',
-        borderWidth: 3,
         marginTop: 150,
         marginBottom: 25,
         alignItems: 'center',
-        justifyContent: 'center'
+        borderRadius: 10,
+        justifyContent: 'center',
     },
 
 

@@ -1,4 +1,4 @@
-import { Text, View, ScrollView, StyleSheet, Image } from "react-native-web";
+import { Text, View, ScrollView, StyleSheet, Image, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
@@ -8,8 +8,10 @@ export default function PageTemplate(props) {
     return (
         <>
             <PageHeader />
-            <View style={styles.fullBg}>
-                <ScrollView style={styles.scrollviewStyle}>
+
+            <ImageBackground style={styles.fullBg}
+                source={props.image}
+            >                <ScrollView style={styles.scrollviewStyle}>
                     <View style={styles.secondBg}>
                         <View style={styles.box}>
                             <View style={styles.horizAlign}>
@@ -38,7 +40,7 @@ export default function PageTemplate(props) {
                         </View>
                     </View>
                 </ScrollView>
-            </View>
+            </ImageBackground>
         </>
     );
 }
@@ -64,8 +66,7 @@ const styles = StyleSheet.create({
         height: 200,
         width: '50%',
         backgroundColor: 'white',
-        borderColor: 'black',
-        borderWidth: 5,
+        borderRadius: 10,
     },
     profileBox:
     {
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
     imageParent: {
         height: 150,
         width: 150,
+        borderRadius: 20,
     },
     horizAlign: {
         flexDirection: 'row',
@@ -103,12 +105,11 @@ const styles = StyleSheet.create({
         height: 450,
         width: '75%',
         backgroundColor: 'white',
-        borderColor: 'black',
-        borderWidth: 3,
         marginTop: 150,
         marginBottom: 25,
         alignItems: 'center',
         justifyContent: 'top',
+        borderRadius: 10,
     },
 
 
