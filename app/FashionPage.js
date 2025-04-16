@@ -4,7 +4,6 @@ import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
 import { useRef } from "react";
-import { VideoView, useVideoPlayer } from 'expo-video'
 
 export default function FashionPage() {
     //const VideoPlayer = () => {
