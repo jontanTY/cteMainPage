@@ -6,8 +6,6 @@ import PageTemplate from "../components/PageTemplate";
 export default function HealthServicesPage() {
     return (
         <ScrollView>
-            <Text>Health Services Page</Text>
-            <Link href='/'>Go back home</Link>
             <PageTemplate
             class = 'Health Services'
             info = 'Ms. Harada and other teachers teach this class and its about health. :)'            
