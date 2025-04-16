@@ -12,9 +12,6 @@ const DropdownComponent = ({ children, arrData }) => {
     navigation.navigate(item.href);
   };
 
-  const data = arrData;
-
-
   return (
     <Dropdown
       style={styles.dropdown}
@@ -25,7 +22,7 @@ const DropdownComponent = ({ children, arrData }) => {
       iconStyle={styles.iconStyle}
       showsVerticalScrollIndicator={false}
       activeColor='#23359d'
-      data={data}
+      data={arrData}
       maxHeight={300}
       labelField="label"
       valueField="value"
