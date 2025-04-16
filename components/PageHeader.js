@@ -57,7 +57,11 @@ export default function PageHeader() {
 
   return (
     <View style={styles.searchContainer}>
+      <Link href="/AboutUsPage" asChild>
+      <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
+      </Link> 
       <SearchAndFilters />
+          
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
         <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'center' }}>
           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
@@ -71,14 +75,15 @@ export default function PageHeader() {
             onSubmitEditing={handleResultPage}
           />
         </View>
-
       </View>
 
       <View style={styles.leftAlign}>
+        <Link href = "/">
         <Image
           style={styles.imageStyle}
           source={require('../assets/moanaluaIcon.png')}
         />
+        </Link>
         <Text style={styles.textStyle}>CTE</Text>
       </View>
     </View>
@@ -124,7 +129,7 @@ const styles = StyleSheet.create({
   },
   leftAlign: {
     justifyContent: 'left',
-    width: '55%',
+    width: '40%',
     flexDirection: 'row',
     alignItems: 'center'
   },
