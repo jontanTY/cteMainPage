@@ -40,9 +40,9 @@ export default function FashionPage() {
                         </View>
 
                         <View style={styles.imageBox}>
-                            <Image style={styles.imageStyle} source={require('../assets/Fashion Bag Pic 1.jpg')} />
+                            {/* <Image style={styles.imageStyle} source={require('../assets/Fashion Bag Pic 1.jpg')} /> */}
 
-                            <Image style={styles.imageStyle2} source={require('../assets/Fashion Bag Pic 2.jpg')} />
+                            {/* <Image style={styles.imageStyle2} source={require('../assets/Fashion Bag Pic 2.jpg')} /> */}
                         </View>
 
                         <View style={styles.imageBox}>

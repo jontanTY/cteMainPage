@@ -80,14 +80,6 @@ export default function MainPage() {
 
                 <ScrollView style={styles.container} onScroll={handleScroll} scrollEventThrottle={16}>
                     <View style={styles.scrollCointainer}>
-                        <View style={styles.headerContainer}>
-
-                            <Image
-                                style={styles.imageStyle}
-                                source={require('../assets/moanaluaIcon.png')}
-                            />
-                            <Header> CTE </Header>
-                        </View>
                         <Calendar> {events} </Calendar>
                         <View style={styles.infoBackground}>
                             <Text style={styles.videoText}> CTE Introduction </Text>
