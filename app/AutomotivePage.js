@@ -12,7 +12,7 @@ export default function AutomotivePage() {
                     <View style={styles.box}>
                         <View style={styles.horizAlign}>
                             <View style={styles.profileBox}>
-                                <Image style={styles.imageParent} source={require('../assets/carIcon.png')} />
+                                {/* <Image style={styles.imageParent} source={require('../assets/carIcon.png')} /> */}
                             </View>
                             <View style={styles.HeaderParent}>
                                 <Header>Automotive</Header>

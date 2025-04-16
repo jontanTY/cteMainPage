@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   },
   searchStyle: {
     color: 'grey',
-    marginTop: -5,
+    marginTop: 15,
     marginRight: 15,
     fontSize: 16,
   },
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
 
   leftAlign: {
     justifyContent: 'left',
-    width: '55%',
+    width: '40%',
     flexDirection: 'row',
     alignItems: 'center'
   },
