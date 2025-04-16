@@ -77,6 +77,9 @@ export default function PageHeader() {
 
   return (
     <View style={styles.searchContainer}>
+      <Link href="/AboutUsPage" asChild>
+      <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
+      </Link> 
       <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
         <MultiSelect
           style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
@@ -108,7 +111,9 @@ export default function PageHeader() {
         //selectedStyle={styles.selectedStyle}
         />
       </View>
+          
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
+        
         <TextInput
           style={styles.textInputStyle}
           onChangeText={setInput}
@@ -122,14 +127,15 @@ export default function PageHeader() {
           <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
           <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
         </View>
-
       </View>
 
       <View style={styles.leftAlign}>
+        <Link href = "/">
         <Image
           style={styles.imageStyle}
           source={require('../assets/moanaluaIcon.png')}
         />
+        </Link>
         <Text style={styles.textStyle}>CTE</Text>
       </View>
     </View>
