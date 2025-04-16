@@ -77,9 +77,11 @@ export default function PageHeader() {
 
   return (
     <View style={styles.searchContainer}>
-      <Link href="/AboutUsPage" asChild>
-      <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
-      </Link> 
+      <View style={{ marginRight: 20}}>
+        <Link href="/AboutUsPage" asChild>
+          <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
+        </Link> 
+      </View>
       <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
         <MultiSelect
           style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}

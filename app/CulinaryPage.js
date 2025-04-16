@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Image, ImageBackground} from "react-native-web";
+import { Text, View, StyleSheet, Image, ImageBackground} from "react-native";
 import { Link } from "expo-router";
 import { ScrollView } from 'react-native';
 import PageTemplate from "../components/PageTemplate";
