@@ -48,14 +48,28 @@ const clubs = [
 ];
 
 export default function PageHeader() {
+  const [input, setInput] = useState("");
+
+  function handleResultPage() {
+    console.log("lol");
+    navigation.navigate("resultsPage", { input: input });
+  }
+
   return (
     <View style={styles.searchContainer}>
-      <SearchAndFilters/>
+      <SearchAndFilters />
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
-        <View style={{ flexDirection: 'row', marginTop: 2 }}>
+        <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'center' }}>
           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
           <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
           <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
+          <Text style={styles.searchStyle}> Search </Text>
+          <TextInput
+            style={styles.textInputStyle}
+            onChangeText={setInput}
+            value={input}
+            onSubmitEditing={handleResultPage}
+          />
         </View>
 
       </View>
@@ -82,6 +96,24 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     paddingTop: 10,
     width: '100%'
+  },
+  searchStyle: {
+    color: 'grey',
+    marginTop: 13,
+    marginRight: 15,
+    fontSize: 16,
+  },
+  textInputStyle: {
+    marginLeft: -0,
+    marginRight: 20,
+    borderWidth: 2,
+    borderColor: 'grey',
+    width: 100,
+    height: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    marginTop: 15,
+    borderRadius: 5,
+    //flex: 1,
   },
   imageStyle: {
     height: 80,
