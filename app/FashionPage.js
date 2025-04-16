@@ -7,10 +7,11 @@ import { useRef } from "react";
 
 export default function FashionPage() {
     //const VideoPlayer = () => {
-        //const videoRef = useRef<VideoRef>(null);
-        return (
+    //const videoRef = useRef<VideoRef>(null);
+    return (
+        <>
+            <PageHeader />
             <View style={styles.fullBg}>
-                <PageHeader />
                 <ScrollView style={styles.scrollviewStyle}>
                     <View style={styles.secondBg}>
                         <View style={styles.box}>
@@ -46,7 +47,7 @@ export default function FashionPage() {
                         </View>
 
                         <View style={styles.imageBox}>
-                        
+
                         </View>
 
                     </View>
@@ -55,8 +56,9 @@ export default function FashionPage() {
 
                 </ScrollView>
             </View>
-        );
-    }
+        </>
+    );
+}
 
 const styles = StyleSheet.create({
     fullBg: {

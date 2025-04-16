@@ -2,49 +2,52 @@ import { Text, View, ScrollView, StyleSheet, Image } from "react-native-web";
 import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
+import { Dimensions } from "react-native";
 
 export default function PageTemplate(props) {
     return (
-        <View style={styles.fullBg}>
+        <>
             <PageHeader />
-            <ScrollView style={styles.scrollviewStyle}>
-                <View style={styles.secondBg}>
-                    <View style={styles.box}>
-                        <View style={styles.horizAlign}>
-                            <View style={styles.profileBox}>
-                                
-                                <Image style={styles.imageParent} source={props.image} />
+            <View style={styles.fullBg}>
+                <ScrollView style={styles.scrollviewStyle}>
+                    <View style={styles.secondBg}>
+                        <View style={styles.box}>
+                            <View style={styles.horizAlign}>
+                                <View style={styles.profileBox}>
+
+                                    <Image style={styles.imageParent} source={props.image} />
+                                </View>
+                                <View style={styles.HeaderParent}>
+                                    <Header>{props.class}</Header>
+                                </View>
+
                             </View>
-                            <View style={styles.HeaderParent}>
-                                <Header>{props.class}</Header>
+                        </View>
+
+
+                        <View style={styles.box2}>
+                            <View style={styles.horizAlign}>
+                                <View style={styles.HeaderParent2}>
+                                    <Header style={styles.HeaderParent2}>{props.info}</Header>
+                                </View>
                             </View>
+                        </View>
+
+                        <View style={styles.placeholder}>
 
                         </View>
                     </View>
-
-
-                    <View style={styles.box2}>
-                        <View style={styles.horizAlign}>
-                            <View style={styles.HeaderParent2}>
-                                <Header style={styles.HeaderParent2}>{props.info}</Header>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.placeholder}>
-
-                    </View>
-                </View>
-            </ScrollView>
-        </View>
+                </ScrollView>
+            </View>
+        </>
     );
 }
 
 const styles = StyleSheet.create({
     fullBg: {
         flex: 1,
-        height: '100%',
-        width: '100%',
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
         backgroundColor: '#9de9f5',
         alignItems: 'center',
         justifyContent: 'top',
@@ -88,8 +91,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        flex : 1,
-        
+        flex: 1,
+
     },
 
     scrollviewStyle: {

@@ -184,5 +184,6 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 55,
     paddingLeft: 16
+    
   }
 });

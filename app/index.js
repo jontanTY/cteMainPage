@@ -19,7 +19,7 @@ import {
     BeVietnam_700Bold_Italic,
     BeVietnam_800ExtraBold,
     BeVietnam_800ExtraBold_Italic,
-} from '@expo-google-fonts/be-vietnam';
+} from '@expo-google-fonts/be-vietnam-pro';
 
 import Header from '../components/Header';
 import Calendar from '../components/Calendar';
