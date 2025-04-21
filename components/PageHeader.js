@@ -7,6 +7,7 @@ import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
 import { Linking } from 'react-native';
 import Header from "./Header";
+import Fonts from "../constants/fonts";
 
 
 import {
@@ -165,11 +166,14 @@ export default function PageHeader() {
       </View>
 
       <View style={styles.leftAlign}>
-        <Image
-          style={styles.imageStyle}
-          source={require('../assets/moanaluaIcon.png')}
-        />
-        <Text style={styles.textStyle}>CTE</Text>
+        <Link href='/'>
+
+          <Image
+            style={styles.imageStyle}
+            source={require('../assets/moanaluaIcon.png')}
+          />
+        </Link>
+        <Text style={styles.textStyle}>Career Technical Education</Text>
       </View>
     </View>
   )
@@ -206,7 +210,7 @@ const styles = StyleSheet.create({
     marginTop: -5,
     marginRight: 15,
     fontSize: 16,
-    
+
   },
 
   imageStyle: {
@@ -224,8 +228,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textStyle: {
-    fontSize: 55,
-    paddingLeft: 16
-
+    fontSize: 35,
+    paddingLeft: 16,
+    fontFamily: Fonts.font400,
   }
 });

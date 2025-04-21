@@ -1,42 +1,140 @@
-import { Text, View, ScrollView, StyleSheet, Image, ImageBackground } from "react-native";
+import { Pressable, FlatList, Text, View, SafeAreaView, ScrollView, StyleSheet, Image, ImageBackground } from "react-native";
 import { Link } from "expo-router";
+import { useState } from "react";
 import PageHeader from "../components/PageHeader";
-import Header from "../components/Header";
 import { Dimensions } from "react-native";
+import Fonts from "../constants/fonts";
+
+import {
+    useFonts,
+    BeVietnam_100Thin,
+    BeVietnam_100Thin_Italic,
+    BeVietnam_300Light,
+    BeVietnam_300Light_Italic,
+    BeVietnam_400Regular,
+    BeVietnam_400Regular_Italic,
+    BeVietnam_500Medium,
+    BeVietnam_500Medium_Italic,
+    BeVietnam_600SemiBold,
+    BeVietnam_600SemiBold_Italic,
+    BeVietnam_700Bold,
+    BeVietnam_700Bold_Italic,
+    BeVietnam_800ExtraBold,
+    BeVietnam_800ExtraBold_Italic,
+} from '@expo-google-fonts/be-vietnam-pro';
+
 
 export default function PageTemplate(props) {
+    const [showPathway, setShowPathway] = useState(false);
+    const [showSubPathway, setShowSubPathway] = useState(false);
+    const [showFinalPathway, setShowFinalPathway] = useState(false);
+    const [showSubClass, setShowSubClass] = useState(0);
+
+    function changeShowPathway() {
+        setShowPathway(!showPathway);
+        setShowSubPathway(false);
+        setShowFinalPathway(false);
+    };
+
+    function changeShowSubPathway(classId) {
+        setShowSubPathway(!showSubPathway);
+        setShowSubClass(classId);
+        setShowFinalPathway(false);
+    }
+
+    function changeShowFinalPathway() {
+        setShowFinalPathway(!showFinalPathway);
+    }
+
+    let [fontsLoaded] = useFonts({
+        BeVietnam_100Thin,
+        BeVietnam_100Thin_Italic,
+        BeVietnam_300Light,
+        BeVietnam_300Light_Italic,
+        BeVietnam_400Regular,
+        BeVietnam_400Regular_Italic,
+        BeVietnam_500Medium,
+        BeVietnam_500Medium_Italic,
+        BeVietnam_600SemiBold,
+        BeVietnam_600SemiBold_Italic,
+        BeVietnam_700Bold,
+        BeVietnam_700Bold_Italic,
+        BeVietnam_800ExtraBold,
+        BeVietnam_800ExtraBold_Italic,
+    });
+
     return (
         <>
             <PageHeader />
 
             <ImageBackground style={styles.fullBg}
                 source={props.image}
-            >                <ScrollView style={styles.scrollviewStyle}>
+            >
+                <ScrollView style={styles.scrollviewStyle}>
                     <View style={styles.secondBg}>
                         <View style={styles.box}>
-                            <View style={styles.horizAlign}>
-                                <View style={styles.profileBox}>
-
-                                    <Image style={styles.imageParent} source={props.image} />
-                                </View>
-                                <View style={styles.HeaderParent}>
-                                    <Header>{props.class}</Header>
-                                </View>
-
-                            </View>
+                            <Text style={styles.pathwayText}>{props.class}</Text>
                         </View>
 
 
                         <View style={styles.box2}>
-                            <View style={styles.horizAlign}>
-                                <View style={styles.HeaderParent2}>
-                                    <Header style={styles.HeaderParent2}>{props.info}</Header>
-                                </View>
-                            </View>
+                            <Text style={styles.descriptionText}>{props.info}</Text>
                         </View>
 
-                        <View style={styles.placeholder}>
+                        <View style={styles.box3}>
+                            <SafeAreaView style={styles.classContainer}>
+                            <Pressable onPress={() => { changeShowPathway() }}>
+                                <Text style={styles.descriptionText}>{props.foundationClass}</Text>
+                            </Pressable>
+                            {showPathway ?
+                                <FlatList
+                                    showsHorizontalScrollIndicator={false}
+                                    data={props.classes}
+                                    renderItem={({ item }) => {
+                                        return (
+                                            <>
+                                            <Pressable
+                                                style={styles.descriptionText}
+                                                onPress={() => { changeShowSubPathway(item.id) }}
+                                            >{item.name}</Pressable>
+                                            <Text style={styles.descriptionText}>{item.description}</Text>
+                                            </>
+                                        );
+                                    }
+                                    }
+                                    keyExtractor={(item) => item.id}
+                                /> : null}
 
+                            {showSubPathway ?
+                                <FlatList
+                                    showsHorizontalScrollIndicator={false}
+                                    data={props.subClasses.slice(showSubClass -1, showSubClass)}
+                                    renderItem={({ item }) => {
+                                        return (
+                                            <Pressable
+                                                style={styles.descriptionText}
+                                                onPress={() => { changeShowFinalPathway() }}
+                                            >{item.name}</Pressable>
+
+                                        );
+                                    }
+                                    }
+                                    keyExtractor={(item) => item.id}
+                                /> : null}
+                                {showFinalPathway ?
+                                <FlatList
+                                    showsHorizontalScrollIndicator={false}
+                                    data={props.finalClasses.slice(showSubClass -1, showSubClass)}
+                                    renderItem={({ item }) => {
+                                        return (
+                                            <Text style={styles.descriptionText}>{item.name}</Text>
+
+                                        );
+                                    }
+                                    }
+                                    keyExtractor={(item) => item.id}
+                                /> : null}
+                                </SafeAreaView>
                         </View>
                     </View>
                 </ScrollView>
@@ -52,15 +150,20 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width,
         backgroundColor: '#9de9f5',
         alignItems: 'center',
-        justifyContent: 'top',
     },
     secondBg: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
         height: '80%',
         width: '100%',
         paddingTop: 150
+    },
+    pathwayText: {
+        fontSize: 50,
+        color: 'black',
+        textAlign: 'center',
+        marginTop: 10,
+        fontFamily: Fonts.font400,
     },
     box: {
         height: 200,
@@ -68,48 +171,39 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 10,
     },
-    profileBox:
-    {
-        paddingLeft: 25,
-        paddingTop: 20
-    },
-    imageParent: {
-        height: 150,
-        width: 150,
-        borderRadius: 20,
-    },
-    horizAlign: {
-        flexDirection: 'row',
+    descriptionText: {
+        fontSize: 18,
+        color: 'black',
         textAlign: 'center',
+        marginTop: 15,
+        marginHorizontal: 20,
+        fontFamily: Fonts.font300,
     },
-    HeaderParent:
-    {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingLeft: 60
-    },
-    HeaderParent2:
-    {
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        flex: 1,
-
-    },
-
     scrollviewStyle: {
-        flexGrow: 1,
         width: '100%'
     },
     box2: {
         height: 450,
-        width: '75%',
+        width: '100%',
         backgroundColor: 'white',
         marginTop: 150,
         marginBottom: 25,
         alignItems: 'center',
         justifyContent: 'top',
-        borderRadius: 10,
+    },
+    box3: {
+        height: 450,
+        width: '100%',
+        backgroundColor: 'white',
+        marginTop: 150,
+        marginBottom: 25,
+        alignItems: 'center',
+        justifyContent: 'top',
+    },
+    classContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        color: 'white',
     },
 
 

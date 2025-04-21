@@ -1,6 +1,7 @@
 const Fonts = {
     font100: 'BeVietnam_100Thin',
     font100Italic: 'BeVietnam_100Thin_Italic',
+    
     font300: 'BeVietnam_300Light',
     font300Italic: 'BeVietnam_300Light_Italic',
     font400: 'BeVietnam_400Regular',

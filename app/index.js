@@ -72,8 +72,7 @@ export default function MainPage() {
 
     return (
 
-        <View style={styles.container}>
-
+        <View style={styles.container}> 
             <ImageBackground
                 style={styles.backgroundImageStyle}
                 source={backgroundImage}
