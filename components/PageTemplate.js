@@ -1,4 +1,4 @@
-import { Pressable, FlatList, Text, View, SafeAreaView, ScrollView, StyleSheet, Image, ImageBackground } from "react-native";
+import { Animated, Pressable, FlatList, Text, View, SafeAreaView, ScrollView, StyleSheet, Image, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
 import PageHeader from "../components/PageHeader";
@@ -29,6 +29,7 @@ export default function PageTemplate(props) {
     const [showSubPathway, setShowSubPathway] = useState(false);
     const [showFinalPathway, setShowFinalPathway] = useState(false);
     const [showSubClass, setShowSubClass] = useState(0);
+    const [clubPath, setClubPath] = useState(1);
 
     function changeShowPathway() {
         setShowPathway(!showPathway);
@@ -44,6 +45,10 @@ export default function PageTemplate(props) {
 
     function changeShowFinalPathway() {
         setShowFinalPathway(!showFinalPathway);
+    }
+
+    function changeShowClubPath(path) {
+        setClubPath(path);
     }
 
     let [fontsLoaded] = useFonts({
@@ -70,71 +75,105 @@ export default function PageTemplate(props) {
             <ImageBackground style={styles.fullBg}
                 source={props.image}
             >
-                <ScrollView style={styles.scrollviewStyle}>
+                <ScrollView
+                    showsHorizontalScrollIndicator={false}
+                    style={styles.scrollviewStyle}>
                     <View style={styles.secondBg}>
                         <View style={styles.box}>
                             <Text style={styles.pathwayText}>{props.class}</Text>
                         </View>
 
 
-                        <View style={styles.box2}>
+                        <View style={styles.courseBox}>
                             <Text style={styles.descriptionText}>{props.info}</Text>
                         </View>
 
-                        <View style={styles.box3}>
+                        <View style={styles.catalogueBox}>
                             <SafeAreaView style={styles.classContainer}>
-                            <Pressable onPress={() => { changeShowPathway() }}>
-                                <Text style={styles.descriptionText}>{props.foundationClass}</Text>
-                            </Pressable>
-                            {showPathway ?
-                                <FlatList
-                                    showsHorizontalScrollIndicator={false}
-                                    data={props.classes}
-                                    renderItem={({ item }) => {
-                                        return (
-                                            <>
-                                            <Pressable
-                                                style={styles.descriptionText}
-                                                onPress={() => { changeShowSubPathway(item.id) }}
-                                            >{item.name}</Pressable>
-                                            <Text style={styles.descriptionText}>{item.description}</Text>
-                                            </>
-                                        );
-                                    }
-                                    }
-                                    keyExtractor={(item) => item.id}
-                                /> : null}
+                                <Pressable onPress={() => { changeShowPathway() }}>
+                                    <Text style={styles.descriptionText}>{props.foundationClass}</Text>
+                                </Pressable>
+                                {showPathway ?
+                                    <FlatList
+                                        showsHorizontalScrollIndicator={false}
+                                        data={props.classes}
+                                        renderItem={({ item }) => {
+                                            return (
+                                                <>
+                                                    <Pressable
+                                                        style={styles.descriptionText}
+                                                        onPress={() => { changeShowSubPathway(item.id) }}
+                                                    >{item.name}</Pressable>
+                                                </>
+                                            );
+                                        }
+                                        }
+                                        keyExtractor={(item) => item.id}
+                                    /> : null}
 
-                            {showSubPathway ?
-                                <FlatList
-                                    showsHorizontalScrollIndicator={false}
-                                    data={props.subClasses.slice(showSubClass -1, showSubClass)}
-                                    renderItem={({ item }) => {
-                                        return (
-                                            <Pressable
-                                                style={styles.descriptionText}
-                                                onPress={() => { changeShowFinalPathway() }}
-                                            >{item.name}</Pressable>
+                                {showSubPathway ?
+                                    <FlatList
+                                        showsHorizontalScrollIndicator={false}
+                                        data={props.subClasses.slice(showSubClass - 1, showSubClass)}
+                                        renderItem={({ item }) => {
+                                            return (
+                                                <Pressable
+                                                    style={styles.descriptionText}
+                                                    onPress={() => { changeShowFinalPathway() }}
+                                                >{item.name}</Pressable>
 
-                                        );
-                                    }
-                                    }
-                                    keyExtractor={(item) => item.id}
-                                /> : null}
+                                            );
+                                        }
+                                        }
+                                        keyExtractor={(item) => item.id}
+                                    /> : null}
                                 {showFinalPathway ?
-                                <FlatList
-                                    showsHorizontalScrollIndicator={false}
-                                    data={props.finalClasses.slice(showSubClass -1, showSubClass)}
-                                    renderItem={({ item }) => {
-                                        return (
-                                            <Text style={styles.descriptionText}>{item.name}</Text>
+                                    <FlatList
+                                        showsHorizontalScrollIndicator={false}
+                                        data={props.finalClasses.slice(showSubClass - 1, showSubClass)}
+                                        renderItem={({ item }) => {
+                                            return (
+                                                <Text style={styles.descriptionText}>{item.name}</Text>
 
-                                        );
-                                    }
-                                    }
-                                    keyExtractor={(item) => item.id}
-                                /> : null}
-                                </SafeAreaView>
+                                            );
+                                        }
+                                        }
+                                        keyExtractor={(item) => item.id}
+                                    /> : null}
+                            </SafeAreaView>
+                        </View>
+                        <View style={styles.clubBox}>
+                            <Text style={styles.descriptionText}>{props.club}</Text>
+                            <View style={{ flexDirection: 'row' }}>
+                                <View style={styles.buttonContainer}>
+                                    <Pressable
+                                        style={styles.clubText}
+                                        onPress={() => { changeShowClubPath(1) }}>
+                                        Description
+                                    </Pressable>
+                                    <Pressable
+                                        style={styles.clubText}
+                                        onPress={() => { changeShowClubPath(2) }}>
+                                        Activities
+                                    </Pressable>
+                                    <Pressable
+                                        style={styles.clubText}
+                                        onPress={() => { changeShowClubPath(3) }}>
+                                        Awards
+                                    </Pressable>
+                                </View>
+                                {clubPath === 1 ?
+                                    <View style={styles.expandContainer}>
+                                        <Image source={props.decaImage} style={{ width: 300, height: 300, marginTop: 10 }} />
+                                        <Text style={styles.descriptionText}>{props.clubDescription}</Text>
+                                    </View> : null}
+                                {clubPath === 2 ?
+                                    <View style={styles.expandContainer}>
+                                    </View> : null}
+                                {clubPath === 3 ?
+                                    <View style={styles.expandContainer}>
+                                    </View> : null}
+                            </View>
                         </View>
                     </View>
                 </ScrollView>
@@ -148,7 +187,6 @@ const styles = StyleSheet.create({
         flex: 1,
         height: Dimensions.get('window').height,
         width: Dimensions.get('window').width,
-        backgroundColor: '#9de9f5',
         alignItems: 'center',
     },
     secondBg: {
@@ -179,32 +217,60 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         fontFamily: Fonts.font300,
     },
+    clubText: {
+        fontSize: 18,
+        color: 'black',
+        marginTop: 15,
+        marginHorizontal: 20,
+        fontFamily: Fonts.font300,
+        textAlign: 'left',
+        width: "20%",
+    },
     scrollviewStyle: {
         width: '100%'
     },
-    box2: {
-        height: 450,
-        width: '100%',
+    courseBox: {
+        height: 375,
+        width: '95%',
         backgroundColor: 'white',
         marginTop: 150,
+        marginBottom: 25,
+        alignItems: 'center',
+        justifyContent: 'top',
+        borderRadius: 3,
+        
+    },
+    catalogueBox: {
+        height: 375,
+        width: '100%',
+        backgroundColor: 'white',
+        marginTop: 300,
         marginBottom: 25,
         alignItems: 'center',
         justifyContent: 'top',
     },
-    box3: {
-        height: 450,
+    clubBox: {
+        height: 375,
         width: '100%',
         backgroundColor: 'white',
-        marginTop: 150,
+        marginTop: 300,
         marginBottom: 25,
-        alignItems: 'center',
         justifyContent: 'top',
+        overflow: 'hidden',
+
     },
     classContainer: {
         flex: 1,
         flexDirection: 'row',
         color: 'white',
     },
-
+    buttonContainer: {
+        flex: 0.2,
+        width: '30%',
+    },
+    expandContainer: {
+        flex: 1,
+        flexDirection: 'row',
+    }
 
 });

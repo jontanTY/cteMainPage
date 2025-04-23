@@ -1,12 +1,9 @@
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
-import MainButton from "./MainButton";
 import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
-import { Linking } from 'react-native';
-import Header from "./Header";
 import Fonts from "../constants/fonts";
 
 
@@ -115,7 +112,6 @@ export default function PageHeader() {
   }
 
   return (
-
     <View style={styles.searchContainer}>
       <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
         <MultiSelect
@@ -181,7 +177,7 @@ export default function PageHeader() {
 
 const styles = StyleSheet.create({
   searchContainer: {
-    flex: 0.10,
+    flex: 0.1,
     flexDirection: 'row-reverse',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -192,7 +188,6 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   textInputStyle: {
-    marginLeft: -0,
     marginRight: 20,
     borderWidth: 2,
     borderColor: 'grey',

@@ -31,6 +31,9 @@ export default function themScreensTemplate() {
             classes={classes}
             subClasses={subClasses}
             finalClasses={finalClasses}
+            club={'DECA'}
+            clubDescription="DECA is an organization that prepares emerging leaders and entrepreneurs in marketing, finance, hospitality, and management. Through competitive events, leadership training, and networking opportunities, DECA members develop essential skills for success in their future careers."
+            decaImage={require('../assets/DECA.jpg')}  
         />
     );
 }
