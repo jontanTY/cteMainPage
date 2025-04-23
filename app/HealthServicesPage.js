@@ -8,7 +8,7 @@ export default function HealthServicesPage() {
         <ScrollView>
             <PageTemplate
             class = 'Health Services'
-            info = 'Ms. Harada and other teachers teach this class and its about health. :)'            
+            info = 'Health Services Text Here'            
             />
         </ScrollView>
     )

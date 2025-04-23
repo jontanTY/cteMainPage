@@ -35,11 +35,11 @@ const events = [
     { id: 4, name: "event4", month: 11, date: 7 },
 ];
 
-const image1 = require('../assets/mohsPAC.jpg');
+const image1 = require('../assets/collage-5.png');
 const image2 = require('../assets/MeneMart-DECA.png');
 
 export default function MainPage() {
-    const [backgroundImage, setBackgroundImage] = useState(require('../assets/mohsPAC.jpg'));
+    const [backgroundImage, setBackgroundImage] = useState(require('../assets/collage-5.png'));
     const player = useVideoPlayer(require('../assets/intro.mp4'), player => { player.play() });
     let [fontsLoaded] = useFonts({
         BeVietnam_100Thin,
