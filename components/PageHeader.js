@@ -7,6 +7,7 @@ import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
 import { Linking } from 'react-native';
 import Header from "./Header";
+import SearchAndFilters from "./SearchAndFilter";
 
 const departments = [
   { label: 'Automotive', value: '1', href: 'AutomotivePage' },
@@ -48,27 +49,6 @@ const clubs = [
 
 export default function PageHeader() {
   const [input, setInput] = useState("");
-  const [selected, setSelected] = useState([]);
-
-  const data = [
-    { label: 'Automotive', value: '1' },
-    { label: 'Business', value: '2' },
-    { label: 'Computer Science', value: '3' },
-    { label: 'Construction', value: '4' },
-    { label: 'Culinary', value: '5' },
-    { label: 'Engineering', value: '6' },
-    { label: 'Fashion', value: '7' },
-    { label: 'Graphics', value: '8' },
-    { label: 'Health Services', value: '9' },
-    { label: 'Media (MeneMac)', value: '10' },
-    { label: 'People', value: '11' },
-    { label: 'Events', value: '12' },
-    { label: 'Dev Team', value: '13' },
-    { label: 'HOSA', value: '14' },
-    { label: 'DECA', value: '15' },
-    { label: 'Robotics', value: '16' },
-    { label: 'FCCLA', value: '17' },
-  ];
 
   function handleResultPage() {
     console.log("lol");
@@ -77,57 +57,23 @@ export default function PageHeader() {
 
   return (
     <View style={styles.searchContainer}>
-      <View style={{ marginRight: 20}}>
-        <Link href="/AboutUsPage" asChild>
-          <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
-        </Link> 
-      </View>
-      <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
-        <MultiSelect
-          style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
-          placeholderStyle={{ color: 'grey' }}
-          // iconStyle={styles.iconStyle}
-          activeColor="lightgrey"
-          itemTextStyle={{ color: 'grey' }}
-          selectedTextStyle={{ color: 'grey', fontSize: 15 }}
-          inputSearchStyle={{ width: 90 }}
-          showsVerticalScrollIndicator={false}
-          dropdownPosition="down"
-          maxSelect={2}
-          //search
-          data={data}
-          labelField="label"
-          valueField="value"
-          placeholder="Filter"
-          searchPlaceholder="Search..."
-          value={selected}
-          onChange={item => {
-            setSelected(item);
-          }}
-          renderLeftIcon={() => (
-            <Image
-              style={[{ height: 5, width: 5, opacity: 0 }]}
-              source={require('../assets/icon.png')}
-            />
-          )}
-        //selectedStyle={styles.selectedStyle}
-        />
-      </View>
+      <Link href="/AboutUsPage" asChild>
+      <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
+      </Link> 
+      <SearchAndFilters />
           
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
-        
-        <TextInput
-          style={styles.textInputStyle}
-          onChangeText={setInput}
-          value={input}
-          onSubmitEditing={handleResultPage}
-        />
-        <Text style={styles.searchStyle}> Search </Text>
-
-        <View style={{ flexDirection: 'row', marginTop: 2 }}>
+        <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'center' }}>
           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
           <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
           <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
+          <Text style={styles.searchStyle}> Search </Text>
+          <TextInput
+            style={styles.textInputStyle}
+            onChangeText={setInput}
+            value={input}
+            onSubmitEditing={handleResultPage}
+          />
         </View>
       </View>
 
@@ -156,6 +102,12 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     width: '100%'
   },
+  searchStyle: {
+    color: 'grey',
+    marginTop: 13,
+    marginRight: 15,
+    fontSize: 16,
+  },
   textInputStyle: {
     marginLeft: -0,
     marginRight: 20,
@@ -164,17 +116,10 @@ const styles = StyleSheet.create({
     width: 100,
     height: 20,
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    marginTop: 18,
+    marginTop: 15,
     borderRadius: 5,
     //flex: 1,
   },
-  searchStyle: {
-    color: 'grey',
-    marginTop: 15,
-    marginRight: 15,
-    fontSize: 16,
-  },
-
   imageStyle: {
     height: 80,
     width: 80,
@@ -182,7 +127,6 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginTop: 5
   },
-
   leftAlign: {
     justifyContent: 'left',
     width: '40%',
