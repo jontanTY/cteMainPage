@@ -5,7 +5,11 @@ import PageTemplate from "../components/PageTemplate";
 export default function GraphicsPage() {
     return (
         <View>
-            <PageTemplate />
+            <PageTemplate 
+            class={'biddy'} 
+            image={require('../assets/teacher-headshots/Nishimura-Photo.jpg')} 
+            info={'Graphics is a class where you design stuff and stuff'}
+            />
         </View>
     )
 }
