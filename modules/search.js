@@ -1,56 +1,4 @@
-const PAGES = [
-   {
-      "title": "Computer Science",
-      "url": "cte/computer-science",
-      "content": "Computer science focuses on programming, algorithms, and software development. Careers include software engineering and cybersecurity."
-   },
-   {
-      "title": "Automotive Technology",
-      "url": "cte/automotive",
-      "content": "Automotive technology teaches vehicle maintenance, repair, and diagnostics. Careers include auto mechanics and service technicians."
-   },
-   {
-      "title": "Culinary Arts",
-      "url": "cte/culinary",
-      "content": "Culinary arts cover cooking techniques, food safety, and restaurant management. Careers include chefs and pastry artists."
-   },
-   {
-      "title": "Health Science",
-      "url": "cte/health-science",
-      "content": "Health science prepares students for medical careers such as nursing, EMT, and medical assisting. Topics include anatomy and patient care."
-   },
-   {
-      "title": "Welding Technology",
-      "url": "cte/welding",
-      "content": "Welding technology teaches metal fabrication, safety procedures, and blueprint reading. Careers include welding and metalworking."
-   },
-   {
-      "title": "Digital Media & Graphic Design",
-      "url": "cte/digital-media",
-      "content": "Graphic design includes digital illustration, branding, and video production. Careers include graphic designers and video editors."
-   },
-   {
-      "title": "Construction & Carpentry",
-      "url": "cte/construction",
-      "content": "Construction teaches blueprint reading, framing, and finishing. Careers include carpentry, plumbing, and electrical work."
-   },
-   {
-      "title": "Agriculture & Natural Resources",
-      "url": "cte/agriculture",
-      "content": "Agriculture education covers crop production, animal science, and environmental conservation. Careers include farming and forestry."
-   },
-   {
-      "title": "Law & Public Safety",
-      "url": "cte/law-public-safety",
-      "content": "This program prepares students for careers in law enforcement, firefighting, and emergency management."
-   },
-   {
-      "title": "Robotics & Engineering",
-      "url": "cte/robotics-engineering",
-      "content": "Engineering and robotics focus on mechanical design, automation, and electronics. Careers include robotics technicians and engineers."
-   }
-];
-
+const PAGES = require("../assets/SearchData/search.json"); // Import data from JSON file
 
 /**
  * Count occurrences of keywords in a text
@@ -92,4 +40,5 @@ export default function search(query) {
    })
       .filter(page => page.score > 0) // Remove pages with no matches
       .sort((a, b) => b.score - a.score); // Sort pages by highest normalized score
+
 }

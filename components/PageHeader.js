@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, TextInput, Button } from "react-native-web";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import MainButton from "./MainButton";
 import { MultiSelect } from 'react-native-element-dropdown';
@@ -51,9 +51,10 @@ export default function PageHeader() {
   const [input, setInput] = useState("");
 
   function handleResultPage() {
-    console.log("lol");
-    navigation.navigate("resultsPage", { input: input });
+    router.replace({pathname: '/resultsPage', params: { input: input }});
   }
+
+  <search/>
 
   return (
     <View style={styles.searchContainer}>

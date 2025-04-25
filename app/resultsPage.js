@@ -1,13 +1,18 @@
-import { FlatList, View, Text, Image } from "react-native-web";
+import { FlatList, View, Text, Image, ScrollView } from "react-native-web";
 import { useEffect, useState } from "react";
 import ResultObjectReturn from "../components/ResultObjectReturn";
 import PageHeader from "../components/PageHeader";
+import { Link } from "expo-router";
+import search from "../modules/search";
+import { useSearchParams } from "expo-router/build/hooks";
 
-export default function resultsPage(props) {
-    const [list, setList] = useState([{ title: 'result1', score: 5, description: 'awdawd', URL: "www.1" },
-    { title: 'result2', score: 10, description: 'awdawd2', URL: "www.2" },
-    { title: 'result3', score: 1, description: 'loawd', URL: "awds2" }]);
+export default function resultsPage() {
+    const [list, setList] = useState(null);
 
+    let inputText = useSearchParams().get("input") || "";
+    if (list === null) {
+        setList(search(inputText));
+    }
     let id = 0;
 
     // function addResult(enterText, enterSubtext) {
@@ -15,33 +20,37 @@ export default function resultsPage(props) {
     //     setList((newlist) => [{ title: enterText, description: enterSubtext, key: id.toString()}, ...newlist]);
     //     id++;
     // }
-
-    useEffect(() => {
-        // Sort the list by score in descending order
-        const sortedList = [...list].sort((a, b) => b.score - a.score);
-        setList(sortedList);
-    }, []);
+    // setList(search(inputText));
+    // useEffect(() => {
+    //     console.log("props.input: " + inputText);
+    //     console.log("List: " + list);
+    //      // Assuming search is a function that returns the list of results based on the input
+    //     // Sort the list by score in descending order
+    //     // const sortedList = [...list].sort((a, b) => b.score - a.score);
+    //     // setList(sortedList);
+    // }, []);
 
     return (
-        <View>
+        <>
             <PageHeader />
-            <View style={{marginTop: 60}}>
-                <FlatList
-                    data={list}
-                    renderItem={(itemData) => {
-                        return (
-                            
-                            <ResultObjectReturn
-                                description={itemData.item.description}
-                                titleText={itemData.item.title}
-                                keyNum={itemData.item.key}
-                                query={props.input}
-                                URL={itemData.item.URL}
-                            />
-                        );
-                    }}
-                />
-            </View>
-        </View>
+            <ScrollView>
+                <View style={{ marginTop: 60 }}>
+                    <FlatList
+                        data={list}
+                        renderItem={({ item }) => {
+                            return (
+                                <ResultObjectReturn
+                                    //description={itemData.item.description}
+                                    titleText={item.title}
+                                    //keyNum={itemData.item.key}
+                                    content={item.content}
+                                    URL={item.url}
+                                />
+                            );
+                        }}
+                    />
+                </View>
+            </ScrollView>
+        </>
     );
 }
