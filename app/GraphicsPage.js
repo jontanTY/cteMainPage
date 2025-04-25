@@ -1,15 +1,18 @@
-import { Text, View } from "react-native-web";
+import { Text, View, StyleSheet, Image, ImageBackground} from "react-native";
 import { Link } from "expo-router";
+import { ScrollView } from 'react-native';
 import PageTemplate from "../components/PageTemplate";
+import PageHeader from "../components/PageHeader";
+import Header from "../components/Header";
+import { VideoView, useVideoPlayer } from 'expo-video';
 
 export default function GraphicsPage() {
     return (
-        <View>
-            <PageTemplate 
-            class={'biddy'} 
-            image={require('../assets/teacher-headshots/Nishimura-Photo.jpg')} 
-            info={'Graphics is a class where you design stuff and stuff'}
+        <ScrollView>
+            <PageTemplate
+            class = 'Graphics'
+            info = 'Graphics Text Here'            
             />
-        </View>
+        </ScrollView>
     )
 }
