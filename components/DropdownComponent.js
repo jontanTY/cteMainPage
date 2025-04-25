@@ -3,6 +3,26 @@ import { StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import { useNavigation } from '@react-navigation/native';
 
+import Fonts from '../constants/fonts';
+
+import {
+  useFonts,
+  BeVietnam_100Thin,
+  BeVietnam_100Thin_Italic,
+  BeVietnam_300Light,
+  BeVietnam_300Light_Italic,
+  BeVietnam_400Regular,
+  BeVietnam_400Regular_Italic,
+  BeVietnam_500Medium,
+  BeVietnam_500Medium_Italic,
+  BeVietnam_600SemiBold,
+  BeVietnam_600SemiBold_Italic,
+  BeVietnam_700Bold,
+  BeVietnam_700Bold_Italic,
+  BeVietnam_800ExtraBold,
+  BeVietnam_800ExtraBold_Italic,
+} from '@expo-google-fonts/be-vietnam-pro';
+
 const DropdownComponent = ({ children, arrData }) => {
   const [value, setValue] = useState(null);
   const navigation = useNavigation();
@@ -12,6 +32,23 @@ const DropdownComponent = ({ children, arrData }) => {
     navigation.navigate(item.href);
   };
 
+  let [fontsLoaded] = useFonts({
+    BeVietnam_100Thin,
+    BeVietnam_100Thin_Italic,
+    BeVietnam_300Light,
+    BeVietnam_300Light_Italic,
+    BeVietnam_400Regular,
+    BeVietnam_400Regular_Italic,
+    BeVietnam_500Medium,
+    BeVietnam_500Medium_Italic,
+    BeVietnam_600SemiBold,
+    BeVietnam_600SemiBold_Italic,
+    BeVietnam_700Bold,
+    BeVietnam_700Bold_Italic,
+    BeVietnam_800ExtraBold,
+    BeVietnam_800ExtraBold_Italic,
+  });
+  
   return (
     <Dropdown
       style={styles.dropdown}
@@ -47,7 +84,7 @@ const styles = StyleSheet.create({
 
   placeholderStyle: {
     fontSize: 16,
-    color: 'grey',
+    fontFamily: Fonts.font300,
   },
   selectedTextStyle: {
     fontSize: 16,
@@ -62,6 +99,7 @@ const styles = StyleSheet.create({
 
   itemTextStyle: {
     color: 'white',
+    fontFamily: Fonts.font300,
   },
 
   iconStyle: {

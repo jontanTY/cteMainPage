@@ -1,10 +1,29 @@
-import { StyleSheet, Text, View, TextInput, Button } from "react-native-web";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
-import MainButton from "./MainButton";
 import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
+import Fonts from "../constants/fonts";
+
+
+import {
+  useFonts,
+  BeVietnam_100Thin,
+  BeVietnam_100Thin_Italic,
+  BeVietnam_300Light,
+  BeVietnam_300Light_Italic,
+  BeVietnam_400Regular,
+  BeVietnam_400Regular_Italic,
+  BeVietnam_500Medium,
+  BeVietnam_500Medium_Italic,
+  BeVietnam_600SemiBold,
+  BeVietnam_600SemiBold_Italic,
+  BeVietnam_700Bold,
+  BeVietnam_700Bold_Italic,
+  BeVietnam_800ExtraBold,
+  BeVietnam_800ExtraBold_Italic,
+} from '@expo-google-fonts/be-vietnam-pro';
 import { Linking } from 'react-native';
 import Header from "./Header";
 import SearchAndFilters from "./SearchAndFilter";
@@ -47,8 +66,49 @@ const clubs = [
   { label: 'FCCLA', value: '5', href: 'AutomotivePage' },
 ];
 
+
+
 export default function PageHeader() {
   const [input, setInput] = useState("");
+  const [selected, setSelected] = useState([]);
+
+  let [fontsLoaded] = useFonts({
+    BeVietnam_100Thin,
+    BeVietnam_100Thin_Italic,
+    BeVietnam_300Light,
+    BeVietnam_300Light_Italic,
+    BeVietnam_400Regular,
+    BeVietnam_400Regular_Italic,
+    BeVietnam_500Medium,
+    BeVietnam_500Medium_Italic,
+    BeVietnam_600SemiBold,
+    BeVietnam_600SemiBold_Italic,
+    BeVietnam_700Bold,
+    BeVietnam_700Bold_Italic,
+    BeVietnam_800ExtraBold,
+    BeVietnam_800ExtraBold_Italic,
+  });
+
+  const data = [
+    { label: 'Automotive', value: '1' },
+    { label: 'Business', value: '2' },
+    { label: 'Computer Science', value: '3' },
+    { label: 'Construction', value: '4' },
+    { label: 'Culinary', value: '5' },
+    { label: 'Engineering', value: '6' },
+    { label: 'Fashion', value: '7' },
+    { label: 'Graphics', value: '8' },
+    { label: 'Health Services', value: '9' },
+    { label: 'Media (MeneMac)', value: '10' },
+    { label: 'People', value: '11' },
+    { label: 'Events', value: '12' },
+    { label: 'Dev Team', value: '13' },
+    { label: 'HOSA', value: '14' },
+    { label: 'DECA', value: '15' },
+    { label: 'Robotics', value: '16' },
+    { label: 'FCCLA', value: '17' },
+  ];
+
 
   function handleResultPage() {
     console.log("lol");
@@ -78,13 +138,15 @@ export default function PageHeader() {
       </View>
 
       <View style={styles.leftAlign}>
-        <Link href = "/">
-        <Image
-          style={styles.imageStyle}
-          source={require('../assets/moanaluaIcon.png')}
-        />
+        <Link href='/'>
+
+          <Image
+            style={styles.imageStyle}
+            source={require('../assets/moanaluaIcon.png')}
+          />
         </Link>
-        <Text style={styles.textStyle}>CTE</Text>
+        <Text style={styles.textStyle}>Career Technical Education</Text>
+
       </View>
     </View>
   )
@@ -92,7 +154,7 @@ export default function PageHeader() {
 
 const styles = StyleSheet.create({
   searchContainer: {
-    flex: 0.10,
+    flex: 0.1,
     flexDirection: 'row-reverse',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -109,7 +171,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   textInputStyle: {
-    marginLeft: -0,
     marginRight: 20,
     borderWidth: 2,
     borderColor: 'grey',
@@ -119,7 +180,17 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderRadius: 5,
     //flex: 1,
+
   },
+
+  searchStyle: {
+    color: 'grey',
+    marginTop: -5,
+    marginRight: 15,
+    fontSize: 16,
+
+  },
+
   imageStyle: {
     height: 80,
     width: 80,
@@ -134,7 +205,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textStyle: {
-    fontSize: 55,
-    paddingLeft: 16
+    fontSize: 35,
+    paddingLeft: 16,
+    fontFamily: Fonts.font400,
   }
 });
