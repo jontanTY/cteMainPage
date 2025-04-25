@@ -164,12 +164,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     width: '100%'
   },
-  searchStyle: {
-    color: 'grey',
-    marginTop: 13,
-    marginRight: 15,
-    fontSize: 16,
-  },
   textInputStyle: {
     marginRight: 20,
     borderWidth: 2,
@@ -185,7 +179,7 @@ const styles = StyleSheet.create({
 
   searchStyle: {
     color: 'grey',
-    marginTop: -5,
+    marginTop: 13,
     marginRight: 15,
     fontSize: 16,
 
