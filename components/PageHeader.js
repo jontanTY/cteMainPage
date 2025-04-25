@@ -24,6 +24,9 @@ import {
   BeVietnam_800ExtraBold,
   BeVietnam_800ExtraBold_Italic,
 } from '@expo-google-fonts/be-vietnam-pro';
+import { Linking } from 'react-native';
+import Header from "./Header";
+import SearchAndFilters from "./SearchAndFilter";
 
 const departments = [
   { label: 'Automotive', value: '1', href: 'AutomotivePage' },
@@ -106,6 +109,7 @@ export default function PageHeader() {
     { label: 'FCCLA', value: '17' },
   ];
 
+
   function handleResultPage() {
     console.log("lol");
     navigation.navigate("resultsPage", { input: input });
@@ -113,52 +117,24 @@ export default function PageHeader() {
 
   return (
     <View style={styles.searchContainer}>
-      <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
-        <MultiSelect
-          style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
-          placeholderStyle={{ color: 'grey' }}
-          // iconStyle={styles.iconStyle}
-          activeColor="lightgrey"
-          itemTextStyle={{ color: 'grey' }}
-          selectedTextStyle={{ color: 'grey', fontSize: 15 }}
-          inputSearchStyle={{ width: 90 }}
-          showsVerticalScrollIndicator={false}
-          dropdownPosition="down"
-          maxSelect={2}
-          //search
-          data={data}
-          labelField="label"
-          valueField="value"
-          placeholder="Filter"
-          searchPlaceholder="Search..."
-          value={selected}
-          onChange={item => {
-            setSelected(item);
-          }}
-          renderLeftIcon={() => (
-            <Image
-              style={[{ height: 5, width: 5, opacity: 0 }]}
-              source={require('../assets/icon.png')}
-            />
-          )}
-        //selectedStyle={styles.selectedStyle}
-        />
-      </View>
+      <Link href="/AboutUsPage" asChild>
+      <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
+      </Link> 
+      <SearchAndFilters />
+          
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
-        <TextInput
-          style={styles.textInputStyle}
-          onChangeText={setInput}
-          value={input}
-          onSubmitEditing={handleResultPage}
-        />
-        <Text style={styles.searchStyle}> Search </Text>
-
-        <View style={{ flexDirection: 'row', marginTop: 2 }}>
+        <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'center' }}>
           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
           <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
           <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
+          <Text style={styles.searchStyle}> Search </Text>
+          <TextInput
+            style={styles.textInputStyle}
+            onChangeText={setInput}
+            value={input}
+            onSubmitEditing={handleResultPage}
+          />
         </View>
-
       </View>
 
       <View style={styles.leftAlign}>
@@ -170,6 +146,7 @@ export default function PageHeader() {
           />
         </Link>
         <Text style={styles.textStyle}>Career Technical Education</Text>
+
       </View>
     </View>
   )
@@ -187,6 +164,12 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     width: '100%'
   },
+  searchStyle: {
+    color: 'grey',
+    marginTop: 13,
+    marginRight: 15,
+    fontSize: 16,
+  },
   textInputStyle: {
     marginRight: 20,
     borderWidth: 2,
@@ -194,7 +177,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 20,
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    marginTop: 18,
+    marginTop: 15,
     borderRadius: 5,
     //flex: 1,
 
@@ -215,10 +198,9 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginTop: 5
   },
-
   leftAlign: {
     justifyContent: 'left',
-    width: '55%',
+    width: '40%',
     flexDirection: 'row',
     alignItems: 'center'
   },

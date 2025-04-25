@@ -1,4 +1,4 @@
-import { Text, View } from "react-native-web";
+import { Text, View, ScrollView, StyleSheet, Image } from "react-native-web";
 import { Link } from "expo-router";
 import PageTemplate from "../components/PageTemplate";
 
@@ -11,7 +11,5 @@ export default function AutomotivePage() {
                 image={require('../assets/automotiveBackground.jpg')}
             />
         </>
-
-
     )
 }
