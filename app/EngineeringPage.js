@@ -4,7 +4,7 @@ import { VideoView, useVideoPlayer } from "expo-video";
 import PageHeader from "../components/PageHeader";
 
 export default function EngineeringPage() {
-    //const player = useVideoPlayer(require('../assets/EngineeringImg/What is Engineering.mp4'), player => { player.play() });
+    const player = useVideoPlayer(require('../assets/EngineeringImg/eng_vid.mp4'), player => { player.play() });
     return (
         <>
             <PageHeader/>
@@ -16,7 +16,7 @@ export default function EngineeringPage() {
                     <View style={styles.videoTopStyle}>
                         <Image style={{ width: 300, height: 300, marginRight: 100 }} source={require('../assets/EngineeringImg/wrenchparent.png')} />
                         <View style={{ borderRadius: 10, borderWidth: 5, background: 'gold', borderColor: 'darkslategrey ', }}>
-                            {/* <VideoView style={{ width: 500, height: 250, borderRadius: 5, }} player={player} /> */}
+                            <VideoView style={{ width: 500, height: 250, borderRadius: 5, }} player={player} />
                         </View>
                         <Image style={{ width: 300, height: 300, marginLeft: 100 }} source={require('../assets/EngineeringImg/gearsparent.png')} />
                     </View>
