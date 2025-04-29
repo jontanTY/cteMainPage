@@ -52,7 +52,7 @@ const teachers = [
   { label: 'Mr. Mitsuda', value: '8', href: 'CulinaryPage' },
   { label: 'Mr. Murray', value: '9', href: 'ConstructionPage' },
   { label: 'Mr. Nishimura', value: '10', href: 'GraphicsPage' },
-  { label: 'Ms. Pate', value: '11', href: 'BusinessPage' },
+  { label: 'Ms. Pate', value: '11', href: 'TeachersPage' },
   { label: 'Ms. Perkins', value: '12', href: 'CulinaryPage' },
   { label: 'Ms. Yonamine', value: '13', href: 'BusinessPage' },
   { label: 'Mr. Zavala', value: '14', href: 'MediaPage' },
