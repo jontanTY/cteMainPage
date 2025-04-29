@@ -11,7 +11,8 @@ export default function GraphicsPage() {
         <ScrollView>
             <PageTemplate
             class = 'Graphics'
-            info = 'Graphics Text Here'            
+            info = 'Graphics Text Here'   
+            image={require('../assets/img_6779.png')}         
             />
         </ScrollView>
     )
