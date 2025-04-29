@@ -1,12 +1,32 @@
-import { StyleSheet, Text, View, TextInput, Button } from "react-native-web";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
-import MainButton from "./MainButton";
 import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
+import Fonts from "../constants/fonts";
+
+
+import {
+  useFonts,
+  BeVietnam_100Thin,
+  BeVietnam_100Thin_Italic,
+  BeVietnam_300Light,
+  BeVietnam_300Light_Italic,
+  BeVietnam_400Regular,
+  BeVietnam_400Regular_Italic,
+  BeVietnam_500Medium,
+  BeVietnam_500Medium_Italic,
+  BeVietnam_600SemiBold,
+  BeVietnam_600SemiBold_Italic,
+  BeVietnam_700Bold,
+  BeVietnam_700Bold_Italic,
+  BeVietnam_800ExtraBold,
+  BeVietnam_800ExtraBold_Italic,
+} from '@expo-google-fonts/be-vietnam-pro';
 import { Linking } from 'react-native';
 import Header from "./Header";
+import SearchAndFilters from "./SearchAndFilter";
 
 const departments = [
   { label: 'Automotive', value: '1', href: 'AutomotivePage' },
@@ -46,9 +66,28 @@ const clubs = [
   { label: 'FCCLA', value: '5', href: 'AutomotivePage' },
 ];
 
+
+
 export default function PageHeader() {
   const [input, setInput] = useState("");
   const [selected, setSelected] = useState([]);
+
+  let [fontsLoaded] = useFonts({
+    BeVietnam_100Thin,
+    BeVietnam_100Thin_Italic,
+    BeVietnam_300Light,
+    BeVietnam_300Light_Italic,
+    BeVietnam_400Regular,
+    BeVietnam_400Regular_Italic,
+    BeVietnam_500Medium,
+    BeVietnam_500Medium_Italic,
+    BeVietnam_600SemiBold,
+    BeVietnam_600SemiBold_Italic,
+    BeVietnam_700Bold,
+    BeVietnam_700Bold_Italic,
+    BeVietnam_800ExtraBold,
+    BeVietnam_800ExtraBold_Italic,
+  });
 
   const data = [
     { label: 'Automotive', value: '1' },
@@ -70,6 +109,7 @@ export default function PageHeader() {
     { label: 'FCCLA', value: '17' },
   ];
 
+
   function handleResultPage() {
     console.log("lol");
     navigation.navigate("resultsPage", { input: input });
@@ -80,63 +120,33 @@ export default function PageHeader() {
       <Link href="/AboutUsPage" asChild>
       <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
       </Link> 
-      <View style={{ marginRight: 40, borderWidth: 0, borderColor: 'grey' }}>
-        <MultiSelect
-          style={{ width: 130, backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
-          placeholderStyle={{ color: 'grey' }}
-          // iconStyle={styles.iconStyle}
-          activeColor="lightgrey"
-          itemTextStyle={{ color: 'grey' }}
-          selectedTextStyle={{ color: 'grey', fontSize: 15 }}
-          inputSearchStyle={{ width: 90 }}
-          showsVerticalScrollIndicator={false}
-          dropdownPosition="down"
-          maxSelect={2}
-          //search
-          data={data}
-          labelField="label"
-          valueField="value"
-          placeholder="Filter"
-          searchPlaceholder="Search..."
-          value={selected}
-          onChange={item => {
-            setSelected(item);
-          }}
-          renderLeftIcon={() => (
-            <Image
-              style={[{ height: 5, width: 5, opacity: 0 }]}
-              source={require('../assets/icon.png')}
-            />
-          )}
-        //selectedStyle={styles.selectedStyle}
-        />
-      </View>
+      <SearchAndFilters />
           
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
-        
-        <TextInput
-          style={styles.textInputStyle}
-          onChangeText={setInput}
-          value={input}
-          onSubmitEditing={handleResultPage}
-        />
-        <Text style={styles.searchStyle}> Search </Text>
-
-        <View style={{ flexDirection: 'row', marginTop: 2 }}>
+        <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'center' }}>
           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
           <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
           <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
+          <Text style={styles.searchStyle}> Search </Text>
+          <TextInput
+            style={styles.textInputStyle}
+            onChangeText={setInput}
+            value={input}
+            onSubmitEditing={handleResultPage}
+          />
         </View>
       </View>
 
       <View style={styles.leftAlign}>
-        <Link href = "/">
-        <Image
-          style={styles.imageStyle}
-          source={require('../assets/moanaluaIcon.png')}
-        />
+        <Link href='/'>
+
+          <Image
+            style={styles.imageStyle}
+            source={require('../assets/moanaluaIcon.png')}
+          />
         </Link>
-        <Text style={styles.textStyle}>CTE</Text>
+        <Text style={styles.textStyle}>Career Technical Education</Text>
+
       </View>
     </View>
   )
@@ -144,7 +154,7 @@ export default function PageHeader() {
 
 const styles = StyleSheet.create({
   searchContainer: {
-    flex: 0.10,
+    flex: 0.1,
     flexDirection: 'row-reverse',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -155,22 +165,24 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   textInputStyle: {
-    marginLeft: -0,
     marginRight: 20,
     borderWidth: 2,
     borderColor: 'grey',
     width: 100,
     height: 20,
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    marginTop: 18,
+    marginTop: 15,
     borderRadius: 5,
     //flex: 1,
+
   },
+
   searchStyle: {
     color: 'grey',
-    marginTop: 15,
+    marginTop: 13,
     marginRight: 15,
     fontSize: 16,
+
   },
 
   imageStyle: {
@@ -180,7 +192,6 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginTop: 5
   },
-
   leftAlign: {
     justifyContent: 'left',
     width: '40%',
@@ -188,7 +199,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textStyle: {
-    fontSize: 55,
-    paddingLeft: 16
+    fontSize: 35,
+    paddingLeft: 16,
+    fontFamily: Fonts.font400,
   }
 });

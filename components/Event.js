@@ -1,6 +1,7 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
 import Fonts from "../constants/fonts";
+
 import {
     useFonts,
     BeVietnam_100Thin,
@@ -17,8 +18,7 @@ import {
     BeVietnam_700Bold_Italic,
     BeVietnam_800ExtraBold,
     BeVietnam_800ExtraBold_Italic,
-} from '@expo-google-fonts/be-vietnam';
-
+} from '@expo-google-fonts/be-vietnam-pro';
 
 export default function Event({ name, month, date }) {
     let [fontsLoaded] = useFonts({
