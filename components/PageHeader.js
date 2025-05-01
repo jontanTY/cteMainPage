@@ -5,6 +5,7 @@ import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
 import Fonts from "../constants/fonts";
+import { Pressable } from "react-native-web";
 
 
 import {
@@ -118,6 +119,7 @@ export default function PageHeader() {
 
   return (
     <View style={styles.searchContainer}>
+      
       <Link href="/AboutUsPage" asChild>
       <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
       </Link> 
@@ -126,8 +128,10 @@ export default function PageHeader() {
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
         <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'center' }}>
           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
-          <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
           <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
+          <Pressable onPress={() => navigation.navigate('TeachersPage')} style={styles.staffPressable}>
+          <Text style={styles.staffText}>Staff</Text>
+          </Pressable>
           <Text style={styles.searchStyle}> Search </Text>
           <TextInput
             style={styles.textInputStyle}
@@ -203,5 +207,18 @@ const styles = StyleSheet.create({
     fontSize: 35,
     paddingLeft: 16,
     fontFamily: Fonts.font400,
-  }
+  },
+  staffPressable: {
+   
+  justifyContent: 'center',
+  alignItems: 'center',
+  },
+  staffText: {
+    color: 'grey',
+    fontSize: 16,
+    fontWeight: '500',
+    fontFamily: Fonts.font300,
+    color: 'black',
+    marginRight: 20,
+  },
 });

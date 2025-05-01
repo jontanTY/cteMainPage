@@ -24,8 +24,18 @@ export default function TeachersPage() {
                     description = 'description text'
                 />
                 <TeacherDescription
+                    source={require('../assets/teacher-headshots/Ms.-Hashizume-Photo.jpg')}
+                    name = 'Ms. Hashizume'
+                    description = 'description text'
+                />
+                <TeacherDescription
                     source={require('../assets/teacher-headshots/Ikenaga-Photo.jpg')}
                     name = 'Mr. Ikenaga'
+                    description = 'description text'
+                />
+                <TeacherDescription
+                    source={require('../assets/teacher-headshots/Ishikawa-Photo.jpg')}
+                    name = 'Mr. Ishikawa'
                     description = 'description text'
                 />
                 <TeacherDescription
@@ -46,11 +56,6 @@ export default function TeachersPage() {
                 <TeacherDescription
                     source={require('../assets/teacher-headshots/Mitsuda-Photo.jpg')}
                     name = 'Mr. Mitsuda'
-                    description = 'description text'
-                />
-                <TeacherDescription
-                    source={require('../assets/teacher-headshots/Ms.-Hashizume-Photo.jpg')}
-                    name = 'Ms. Hashizume'
                     description = 'description text'
                 />
                 <TeacherDescription
