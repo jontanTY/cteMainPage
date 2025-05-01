@@ -2,42 +2,43 @@ import { Text, View, StyleSheet, ScrollView, Image } from "react-native-web";
 import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
+import PageTemplate from "../components/PageTemplate";
 
 export default function ComputerSciencePage() {
+    const classes = [
+        { id: 1, name: "AP Computer Science A", description: 1 },
+        { id: 2, name: "Programming 2: Mobile Apps Development", description: 1},
+    ];
+
+    const subClasses = [
+        
+    ];
+
+    const finalClasses = [
+        
+    ];
+
     return (
-        <View style={styles.fullBg}>
-            <PageHeader />
-            <ScrollView style={styles.scrollviewStyle}>
-                <View style={styles.secondBg}>
-                    <View style={styles.box}>
-                        <View style={styles.horizAlign}>
-                            <View style={styles.profileBox}>
-                                <Image style={styles.imageParent} source={require('../assets/csIcon.png')} />
-                            </View>
-                            <View style={styles.HeaderParent}>
-                                <text style={styles.normalText}>Computer Science</text>
-                            </View>
-
-                        </View>
-                    </View>
-
-
-                    <View style={styles.box2}>
-                        <View style={styles.horizAlign}>
-                                <Text style={styles.normalText2}>Teachers: Mr. Takahashi, Mr. Ishikawa, Mr. Park</Text> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Takahashi-Photo.jpg')} /> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Ishikawa-Photo.jpg')} /> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Takahashi-Photo.jpg')} />
-                            </View>
-                            <Text style={styles.abnormalText}>The Automotive Class teaches students about the maintenance and general upkeep of motor vehicles. Students will learn how to take care of cars to be better prepared for the everyday wear-and-tear of their vehicles.</Text>
-                            <Text>Courses:      Foundations of Auto Maintenance and Light Repair (9,10,11,12) (1 year),</Text>
-                            <Text>Auto Maintenance and Light Repair 1 (10,11,12) (1 year),</Text>
-                            <Text>Auto Maintenance and Light Repair 2 (11,12) (1 year)</Text>
-                    </View>
-
-                    <View style={styles.placeholder}>
-
-                    </View>
-                </View>
-            </ScrollView>
-        </View>
+        <>
+            <PageTemplate 
+                class = 'Computer Science'
+                info = 'Computer Science is a field of study that focuses on the theory, development, and application of computer systems and software. It encompasses a wide range of topics, including programming, algorithms, data structures, artificial intelligence, and more. Computer science plays a crucial role in shaping the technology that drives our modern world.'
+                foundationClass = 'Foundations of Computer Systems and Technology'
+                foundationDescription="This course is hands-on introduction to computer science concepts and skills. Computer science concepts covered will include an exploration
+                of computer programming in different applications such as web development, game development and robotics. Students will have
+                opportunities to learn and apply problem-solving skills. This course is a recommended pre-cursor to the AP Computer Science A course.
+                Recommended for students who are considering a major in computer science or who will want to be informed citizens in today’s technological
+                society."
+                image={require('../assets/CompSciImg/compSciBackground.jpg')}
+                classes={classes}
+                subClasses={subClasses}
+                finalClasses={finalClasses}
+                club={'Development Team (Coding Club)'}
+                clubDescription="The Development Team (Coding Club) is a student-led organization that focuses on enhancing coding skills, collaborating on projects, and participating in coding competitions. Members work together to learn new programming languages, develop software applications, and share knowledge about the latest trends in technology."
+                decaImage={require('../assets/fccla.jpg')}
+            />
+            
+        </>
     );
 }
 
