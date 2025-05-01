@@ -185,7 +185,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingBottom: 50,
     paddingTop: 10,
-    width: '100%'
+    width: '100%',
+    borderBottomWidth: 1,
+    borderBottomColor: '#D3D3D3',
   },
   textInputStyle: {
     marginRight: 20,

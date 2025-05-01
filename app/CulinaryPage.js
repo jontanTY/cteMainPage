@@ -9,8 +9,8 @@ import { VideoView, useVideoPlayer } from 'expo-video';
 export default function CulinaryPage() {
     const player = useVideoPlayer(require('../assets/culinaryvid.mp4'), player => { player.play() }); // This will play the video when the component mounts. You can also call player.pause() to pause it or player.seek(0) to seek to the beginning.
     return (
-        <>                    <PageHeader />
-
+        <>                    
+        <PageHeader />
             <View style={styles.fullBg}>
                 <ImageBackground source={require('../assets/mohsPAC.jpg')} style={{ width: '100%', height: '100%' }} resizeMode="cover">
                     <ScrollView style={styles.scrollviewStyle}>

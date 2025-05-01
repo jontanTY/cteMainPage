@@ -72,7 +72,7 @@ export default function MainPage() {
 
     return (
 
-        <View style={styles.container}> 
+        <View style={styles.container}>
             <ImageBackground
                 style={styles.backgroundImageStyle}
                 source={backgroundImage}
@@ -80,9 +80,14 @@ export default function MainPage() {
 
                 <PageHeader />
 
-                <ScrollView style={styles.container} onScroll={handleScroll} scrollEventThrottle={16}>
+                <ScrollView
+                    style={styles.container}
+                    onScroll={handleScroll}
+                    scrollEventThrottle={16}
+                    showsVerticalScrollIndicator={false}
+                >
                     <View style={styles.scrollCointainer}>
-                       
+
                         <Calendar> {events} </Calendar>
                         <View style={styles.infoBackground}>
                             <Text style={styles.videoText}> CTE Introduction </Text>

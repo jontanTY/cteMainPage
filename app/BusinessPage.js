@@ -20,6 +20,16 @@ export default function themScreensTemplate() {
         { id: 3, name: "Accounting", description: 7 },
     ];
 
+    const image1 = require('../assets/DECA.jpg');
+    //const image2 = require('./assets/image2.png');
+    //const image3 = require('./assets/image3.png');
+
+    const awards = [
+        { id: 1, name: "DECA State Conference", image: image1 },
+        { id: 2, name: "FBLA State Leadership Conference", image: image1},
+        { id: 3, name: "National Business Professionals of America (BPA) Conference", image: image1 },
+    ]
+
 
     return (
         <PageTemplate
@@ -33,7 +43,8 @@ export default function themScreensTemplate() {
             finalClasses={finalClasses}
             club={'DECA'}
             clubDescription="DECA is an organization that prepares emerging leaders and entrepreneurs in marketing, finance, hospitality, and management. Through competitive events, leadership training, and networking opportunities, DECA members develop essential skills for success in their future careers."
-            decaImage={require('../assets/DECA.jpg')}  
+            decaImage={require('../assets/DECA.jpg')}
+            awards={awards}
         />
     );
 }
