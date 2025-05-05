@@ -8,10 +8,19 @@ import { VideoView, useVideoPlayer } from 'expo-video';
 
 const classes = [
     { id: 1, name: 'Foundations of Creative Media (9,10,11,12) (1 year)', description: 1 },
-    { id: 3, name: 'Digital Design 1 (10,11,12) (1 year)', description: 7 },
+    { id: 2, name: 'Digital Design 1 (10,11,12) (1 year)', description: 3 },
     { id: 3, name: 'Digital Design 2 (10,11,12) (1 year)', description: 7 },
-    { id: 3, name: 'Digital Design: Work Based Learning (11,12) (1 year)', description: 7 },
+    { id: 4, name: 'Digital Design: Work Based Learning (11,12) (1 year)', description: 9 },
 ];
+
+const subClasses = [
+//there are no sub classes for graphics or final classes!
+
+]
+
+const finalClasses = [
+
+]
 
 
 export default function GraphicsPage() {
@@ -24,6 +33,8 @@ export default function GraphicsPage() {
                 foundationClass='Design Art Media'
                 descriptionText="This course introduces students to business operations, marketing strategies, financial literacy, and entrepreneurship. Through hands-on projects and real-world applications, students develop critical thinking and problem-solving skills for future studies or careers."
                 classes={classes}
+                subClasses={subClasses}
+                finalClasses={finalClasses}
                 clubDescription = 'Currently there are no clubs for Graphics. However, students are encouraged to join the graphics team and participate in helping the create merchandise for the school to purchase!' 
             />
     
