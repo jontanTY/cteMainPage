@@ -2,123 +2,16 @@ import { Text, View, StyleSheet, ScrollView, Image } from "react-native-web";
 import { Link } from "expo-router";
 import PageHeader from "../components/PageHeader";
 import Header from "../components/Header";
+import PageTemplate from "../components/PageTemplate";
 
 export default function ComputerSciencePage() {
     return (
-        <View style={styles.fullBg}>
-            <PageHeader />
-            <ScrollView style={styles.scrollviewStyle}>
-                <View style={styles.secondBg}>
-                    <View style={styles.box}>
-                        <View style={styles.horizAlign}>
-                            <View style={styles.profileBox}>
-                                <Image style={styles.imageParent} source={require('../assets/csIcon.png')} />
-                            </View>
-                            <View style={styles.HeaderParent}>
-                                <text style={styles.normalText}>Computer Science</text>
-                            </View>
-
-                        </View>
-                    </View>
-
-
-                    <View style={styles.box2}>
-                        <View style={styles.horizAlign}>
-                                <Text style={styles.normalText2}>Teachers: Mr. Takahashi, Mr. Ishikawa, Mr. Park</Text> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Takahashi-Photo.jpg')} /> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Ishikawa-Photo.jpg')} /> <Image style={styles.imageParent2} source={require('../assets/teacher-headshots/Takahashi-Photo.jpg')} />
-                            </View>
-                            <Text style={styles.abnormalText}>The Automotive Class teaches students about the maintenance and general upkeep of motor vehicles. Students will learn how to take care of cars to be better prepared for the everyday wear-and-tear of their vehicles.</Text>
-                            <Text>Courses:      Foundations of Auto Maintenance and Light Repair (9,10,11,12) (1 year),</Text>
-                            <Text>Auto Maintenance and Light Repair 1 (10,11,12) (1 year),</Text>
-                            <Text>Auto Maintenance and Light Repair 2 (11,12) (1 year)</Text>
-                    </View>
-
-                    <View style={styles.placeholder}>
-
-                    </View>
-                </View>
-            </ScrollView>
-        </View>
-    );
+            <>
+                <PageTemplate
+                    class='Computer Science'
+                    info='This course is a hands-on introduction to computer science concepts and skills. Computer science concepts covered will include an exploration of computer programming in different applications such as web development, game development and robotics. Students will have opportunities to learn and apply problem-solving skills. This course is a recommended pre-cursor to the AP Computer Science A course. Recommended for students who are considering a major in computer science or who will want to be informed citizens in today’s technological society.'
+                    image={require('../assets/automotiveBackground.jpg')}
+                />
+            </>
+    )
 }
-
-const styles = StyleSheet.create({
-    fullBg: {
-        flex: 1,
-        height: '100%',
-        width: '100%',
-        backgroundColor: '#9de9f5',
-        alignItems: 'center',
-        justifyContent: 'top',
-    },
-    secondBg: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '80%',
-        width: '100%',
-        paddingTop: 150
-    },
-    box: {
-        height: 200,
-        width: '50%',
-        backgroundColor: 'white',
-        borderColor: 'black',
-        borderWidth: 5,
-    },
-    profileBox:
-    {
-        paddingLeft: 25,
-        paddingTop: 20
-    },
-    imageParent: {
-        height: 135,
-        width: 135,
-    },
-    horizAlign: {
-        flexDirection: 'row',
-    },
-    HeaderParent:
-    {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingLeft: 90
-    },
-    HeaderParent2:
-    {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    scrollviewStyle: {
-        flexGrow: 1,
-        width: '100%'
-    },
-    box2: {
-        height: 450,
-        width: '75%',
-        backgroundColor: 'white',
-        borderColor: 'black',
-        borderWidth: 3,
-        marginTop: 150,
-        marginBottom: 25,
-        alignItems: 'center',
-        justifyContent: 'top'
-    },
-    normalText: {
-        fontSize: 48,
-        marginTop: 56
-    },
-    normalText2: {
-        fontSize: 48,
-        marginTop: 6,
-        marginLeft: 16
-    },
-    abnormalText: {
-        fontSize: 32,
-        marginTop: 16,
-        marginLeft: 24
-    },
-    imageParent2: {
-        marginTop: 12,
-        marginRight: 10
-    }
-});
