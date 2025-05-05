@@ -12,10 +12,7 @@ import PageHeader from '../components/PageHeader';
 export default function AboutUsPage() {
     return (
         <View style={styles.container}>
-            
-            <View style = {styles.headerContainer}>
-                <PageHeader title={'About Us'}/>
-            </View>
+            <PageHeader title={'About Us'}/>
             <ScrollView style={styles.bottomContainer}>
                 <Text style = {styles.textStyle}>
                     Welcome to the Moanalua High School CTE Department website! 
@@ -35,7 +32,7 @@ export default function AboutUsPage() {
                 <View>
                 <Image
                     style={styles.backgroundImageStyle}
-                    source={require('../assets/sample-image.jpg')}
+                    source={require('../assets/better-teachers.jpg')}
                 />
                 </View>
             </ScrollView>

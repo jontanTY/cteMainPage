@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
-import { Link } from "expo-router";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native-web";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import { MultiSelect } from 'react-native-element-dropdown';
 import DropdownComponent from "./DropdownComponent";
 import { Image } from "react-native-web";
 import Fonts from "../constants/fonts";
+import { Pressable } from "react-native-web";
 
 
 import {
@@ -52,7 +53,7 @@ const teachers = [
   { label: 'Mr. Mitsuda', value: '8', href: 'CulinaryPage' },
   { label: 'Mr. Murray', value: '9', href: 'ConstructionPage' },
   { label: 'Mr. Nishimura', value: '10', href: 'GraphicsPage' },
-  { label: 'Ms. Pate', value: '11', href: 'BusinessPage' },
+  { label: 'Ms. Pate', value: '11', href: 'TeachersPage' },
   { label: 'Ms. Perkins', value: '12', href: 'CulinaryPage' },
   { label: 'Ms. Yonamine', value: '13', href: 'BusinessPage' },
   { label: 'Mr. Zavala', value: '14', href: 'MediaPage' },
@@ -111,12 +112,14 @@ export default function PageHeader() {
 
 
   function handleResultPage() {
-    console.log("lol");
-    navigation.navigate("resultsPage", { input: input });
+    router.replace({pathname: '/resultsPage', params: { input: input }});
   }
+
+  <search/>
 
   return (
     <View style={styles.searchContainer}>
+      
       <Link href="/AboutUsPage" asChild>
       <Button title = 'ABOUT US ' style = {{width: 200, paddingLeft: 50,}}></Button>
       </Link> 
@@ -125,8 +128,10 @@ export default function PageHeader() {
       <View style={{ marginLeft: 0, flexDirection: 'row-reverse', flex: 1 }}>
         <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'center' }}>
           <DropdownComponent arrData={departments}> Departments </DropdownComponent>
-          <DropdownComponent arrData={teachers}> Teachers </DropdownComponent>
           <DropdownComponent arrData={clubs}> Clubs </DropdownComponent>
+          <Pressable onPress={() => navigation.navigate('TeachersPage')} style={styles.staffPressable}>
+          <Text style={styles.staffText}>Staff</Text>
+          </Pressable>
           <Text style={styles.searchStyle}> Search </Text>
           <TextInput
             style={styles.textInputStyle}
@@ -164,12 +169,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     width: '100%'
   },
-  searchStyle: {
-    color: 'grey',
-    marginTop: 13,
-    marginRight: 15,
-    fontSize: 16,
-  },
   textInputStyle: {
     marginRight: 20,
     borderWidth: 2,
@@ -185,7 +184,7 @@ const styles = StyleSheet.create({
 
   searchStyle: {
     color: 'grey',
-    marginTop: -5,
+    marginTop: 13,
     marginRight: 15,
     fontSize: 16,
 
@@ -208,5 +207,18 @@ const styles = StyleSheet.create({
     fontSize: 35,
     paddingLeft: 16,
     fontFamily: Fonts.font400,
-  }
+  },
+  staffPressable: {
+   
+  justifyContent: 'center',
+  alignItems: 'center',
+  },
+  staffText: {
+    color: 'grey',
+    fontSize: 16,
+    fontWeight: '500',
+    fontFamily: Fonts.font300,
+    color: 'black',
+    marginRight: 20,
+  },
 });
