@@ -50,9 +50,9 @@ const styles = StyleSheet.create({
         left: 280,
         right: 0,
         bottom: 0,
-        width: 500, 
-        height: 500,
-        marginHorizontal: 500,
+        width: 650, 
+        height: 300,
+        marginHorizontal: 450,
         marginTop: -910,
     },
 
