@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     descriptionText: {
-        fontSize: 18,
+        fontSize: 32,
         color: 'black',
         textAlign: 'center',
         marginTop: 15,

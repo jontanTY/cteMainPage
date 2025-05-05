@@ -32,7 +32,7 @@ export default function AboutUsPage() {
                 <View>
                 <Image
                     style={styles.backgroundImageStyle}
-                    source={require('../assets/sample-image.jpg')}
+                    source={require('../assets/better-teachers.jpg')}
                 />
                 </View>
             </ScrollView>
