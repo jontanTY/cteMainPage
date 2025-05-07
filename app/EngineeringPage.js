@@ -5,6 +5,22 @@ import PageHeader from "../components/PageHeader";
 import PageTemplate from "../components/PageTemplate";
 
 export default function EngineeringPage() {
+
+    const classes = [
+        {id: 1, name: 'Engineering Tech 1', description: 1}
+    ];
+
+    const subclasses = [
+        {id: 1, name: 'Engineering Tech 2', description: 1}
+    ]
+
+    const finalClasses = [
+        {id: 1, name: 'Engineering Tech 3', description: 1}
+    ]
+
+    
+    
+
     //const player = useVideoPlayer(require('../assets/EngineeringImg/What is Engineering.mp4'), player => { player.play() });
     return (
         <>
@@ -12,6 +28,10 @@ export default function EngineeringPage() {
                 class = 'Engineering'
                 info = 'Here at Moanalua we offer a various amount of courses that better prepare our students for engineering related careers.'
                 image = {require('../assets/engineering.jpg')}
+                foundationClass = 'Foundations of Engineering Technology'
+                classes = {classes}
+                subclasses = {subclasses}
+                finalClasses = {finalClasses}
             />
         </>
     )
